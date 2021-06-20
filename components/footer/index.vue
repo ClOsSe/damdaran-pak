@@ -6,9 +6,9 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="footer-item">
                             <div class="footer-logo">
-                                <a href="index.html">
+                                <NuxtLink to="/">
                                     <img src="@/assets/img/logo.png" alt="Logo">
-                                </a>
+                                </NuxtLink>
                                 <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. </p>
                             </div>
                         </div>
@@ -19,15 +19,15 @@
                                 <h3>شرکت</h3>
                                 <ul>
                                     <li>
-                                        <a href="about.html" target="_blank">درباره ما</a>
+                                        <NuxtLink to="/aboutUs" target="_blank">درباره ما</NuxtLink>
                                     </li>
                                     
                                     
                                     <li>
-                                        <a href="team.html" target="_blank">ثبت سفارش</a>
+                                        <NuxtLink to="/registerOrder" target="_blank">ثبت سفارش</NuxtLink>
                                     </li>
                                     <li>
-                                        <a href="blog.html" target="_blank">وبلاگ</a>
+                                        <NuxtLink to="/blog" target="_blank">وبلاگ</NuxtLink>
                                     </li>
                                 </ul>
                             </div>
