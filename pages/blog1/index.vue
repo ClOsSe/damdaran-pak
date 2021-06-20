@@ -1,6 +1,6 @@
 <template>
-	<div>	
-		<!DOCTYPE html>
+    <div>
+        <!DOCTYPE html>
 <html lang="fa" dir="rtl">
     <head>
         <meta charset="UTF-8">
@@ -576,5 +576,11 @@
 <script src="assets/js/custom.js"></script>
     </body>
 </html>
-	</div>
+    </div>
 </template>
+<script>
+
+
+export default {
+}
+</script>

@@ -2,7 +2,7 @@
   <div dir="rtl">
   
         <!-- Preloader -->
-        <div class="loader">
+        <!-- <div class="loader">
             <div class="d-table">
                 <div class="d-table-cell"> 
                     <div class="spinner">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- End Preloader -->
 
         <!-- Navbar Area -->

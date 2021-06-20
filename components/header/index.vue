@@ -18,7 +18,7 @@
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle active">خانه </a>
+                                    <NuxtLink to="/" class="nav-link dropdown-toggle active">خانه </NuxtLink>
                                    
                                 </li>
                                 <li class="nav-item">
