@@ -17,8 +17,6 @@
         </div> -->
         <!-- End Preloader -->
 
-        <!-- Navbar Area -->
-        <!-- End Navbar Area -->
         <!-- Banner -->
         <Banner />
         <!-- end Banner -->
@@ -31,13 +29,9 @@
         <Choose />
         <!-- End Choose -->
 
-        
-
         <!-- About -->
         <About />
         <!-- End About -->
-
-       
 
         <!-- Estimate -->
         <div class="estimate-area ptb-100 mt-5">
@@ -94,12 +88,12 @@
 </template>
 
 <script>
-import Banner from "../components/threeRowcartWithTitle"
+import Banner from "../components/Banner"
 import Counter from '../components/counter'
 import Choose from '../components/choose'
 import About from '../components/about'
 import RegisterOrder from '../components/registerOrder'
-import Subscribe from '../components/Subscribe'
+import Subscribe from '../components/subscribe'
 
 export default {
   components:{

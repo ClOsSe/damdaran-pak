@@ -3,7 +3,7 @@
         <!-- Banner -->
         <div class="banner-area">
             <div class="banner-shape">
-                <img src="@/assets/img/home-one/banner-main.png" alt="Banner">
+                <img style="right:auto !important;" src="@/assets/img/home-one/banner-main.png" alt="Banner">
                 <img src="@/assets/img/home-one/banner-shape1.png" alt="Shape">
                 <img src="@/assets/img/home-one/banner-shape2.png" alt="Shape">
                 <img src="@/assets/img/home-one/banner-shape3.png" alt="Shape">
