@@ -47,12 +47,12 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-4">
                         <div class="blog-item">
-                            <a href="blog-details.html">
+                            <NuxtLink to="/blogDetails">
                                 <img src="@/assets/img/home-three/blog1.jpg" alt="Blog">
-                            </a>
+                            </NuxtLink>
                             <div class="blog-bottom">
                                 <h3>
-                                    <a href="blog-details.html">آموزش نحوه رزرو آسان خدمات نظافتی شرکت لیکسی</a>
+                                    <NuxtLink to="/blogDetails">آموزش نحوه رزرو آسان خدمات نظافتی شرکت لیکسی</NuxtLink>
                                 </h3>
                                 <ul>
                                     <li>
