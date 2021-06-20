@@ -48,14 +48,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="choose-contact two">
-                            <div class="section-title">
-                                <span class="sub-title">درباره ما</span>
-                                <h2>ارائه خدمات نظافتی با کیفیت</h2>
-                            </div>
-                            <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                            <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                        </div>
+                        <AboutUs />
                     </div>
                 </div>
             </div>
@@ -63,46 +56,7 @@
         <!-- End Choose -->
 
         <!-- Counter -->
-        <div class="counter-area four">
-            <div class="counter-wrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6 col-sm-6 col-lg-3">
-                            <div class="counter-item">
-                                <h3>
-                                    <span class="odometer" data-count="15">00</span> 
-                                </h3>
-                                <p>سال تجربه</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-6 col-lg-3">
-                            <div class="counter-item">
-                                <h3>
-                                    <span class="odometer" data-count="156">00</span> 
-                                </h3>
-                                <p>رضایت مشتری</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-6 col-lg-3">
-                            <div class="counter-item">
-                                <h3>
-                                    <span class="odometer" data-count="756">00</span> 
-                                </h3>
-                                <p>پروژه تکمیل شده</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-6 col-lg-3">
-                            <div class="counter-item">
-                                <h3>
-                                    <span class="odometer" data-count="22">00</span> 
-                                </h3>
-                                <p>پروژه فعال</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Counter />
         <!-- End Counter -->
 
         <!-- Watch -->
@@ -131,10 +85,10 @@
         <!-- End Watch -->
 
         <!-- Love -->
-        <section class="love-area pb-100">
-            <div class="container">
-                <div class="love-item">
-                    <div class="section-title">
+        <section class="love-area pb-100" >
+            <div class="container" >
+                <div class="love-item" >
+                    <div class="section-title" style="text-align:right">
                         <h2>چگونه کار می کند</h2>
                     </div>
                     <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
@@ -163,37 +117,21 @@
         <!-- End Love -->
 
         <!-- Subscribe -->
-        <div class="subscribe-area">
-            <div class="subscribe-wrap">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="section-title">
-                                <h2>در خبرنامه ما عضو شوید</h2>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <form class="newsletter-form" data-toggle="validator">
-                                <input type="email" class="form-control" placeholder="آدرس ایمیل شما" name="EMAIL" required autocomplete="off">
-        
-                                <button class="btn cmn-btn" type="submit">
-                                    مشترک شدن
-                                </button>
-                                <div id="validator-newsletter" class="form-result"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Subscribe />
         <!-- End Subscribe -->
     </div>    
 </template>
 <script>
 import Loader from '@/components/loader'
+import AboutUs from '@/components/cardWithCallToActions'
+import Counter from '@/components/counter'
+import Subscribe from '@/components/subscribe'
 export default {
     components:{
-        Loader
+        Loader,
+        AboutUs,
+        Counter,
+        Subscribe
     }
 }
 </script>

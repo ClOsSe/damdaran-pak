@@ -1,11 +1,11 @@
 <template>
-<div dir="ltr">
+<div dir="rtl">
     <div class="subscribe-area">
-            <div class="subscribe-wrap">
+            <div class="subscribe-wrap" >
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="section-title">
+                    <div class="row align-items-center" >
+                        <div class="col-lg-6" >
+                            <div class="section-title" style="text-align:right">
                                 <h2>در خبرنامه ما عضو شوید</h2>
                             </div>
                         </div>
