@@ -1,19 +1,9 @@
 <template>
 	<div dir="rtl">	
-        <!-- Preloader -->
-        <!-- <div class="loader">
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <div class="spinner">
-                        <div class="rect1"></div>
-                        <div class="rect2"></div>
-                        <div class="rect3"></div>
-                        <div class="rect4"></div>
-                        <div class="rect5"></div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+         <!-- Preloader -->
+        <div class="loader">
+            <Loader />
+        </div>
         <!-- End Preloader -->
 
         <!-- Page Title -->
@@ -397,3 +387,12 @@
 
 	</div>
 </template>
+<script>
+import Loader from '@/components/loader'
+
+export default {
+    components:{
+        Loader
+    }
+}
+</script>
