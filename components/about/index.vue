@@ -4,14 +4,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="about-content">
-                            <div class="section-title">
-                                <span class="sub-title">درباره ما</span>
-                                <h2>ارائه خدمات نظافتی با کیفیت</h2>
-                            </div>
-                            <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                            <a class="cmn-btn" href="#">بیشتر بخوانید</a>
-                        </div>
+                        <AboutUs />
                     </div>
                     <div class="col-lg-6">
                         <div class="about-img">
@@ -28,3 +21,11 @@
         </section>
     </div>    
 </template>
+<script>
+import AboutUs from '@/components/cardWithCallToActions'
+export default {
+    components:{
+        AboutUs
+    }
+}
+</script>

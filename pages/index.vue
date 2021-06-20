@@ -1,6 +1,5 @@
 <template>
   <div dir="rtl">
-  
         <!-- Preloader -->
         <div class="loader">
             <Loader />
@@ -30,7 +29,6 @@
         <!-- Estimate -->
         <Estimate />
         <!-- End Estimate -->
-
         
         <!-- Subscribe -->
         <Subscribe />
