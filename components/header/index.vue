@@ -22,24 +22,24 @@
                                    
                                 </li>
                                 <li class="nav-item">
-                                    <a href="registerOrder.html" class="nav-link dropdown-toggle ">ثبت سفارش </a>
+                                    <NuxtLink  to="/registerOrder" class="nav-link dropdown-toggle ">ثبت سفارش </NuxtLink>
                                    
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a href="about.html" class="nav-link">درباره ما</a>
+                                    <NuxtLink  to="/about" class="nav-link">درباره ما</NuxtLink>
                                 </li>
                                 
                                
                                 <li class="nav-item">
-                                    <a href="blog.html" class="nav-link dropdown-toggle">وبلاگ </a>
+                                    <NuxtLink  to="/blog" class="nav-link dropdown-toggle">وبلاگ </NuxtLink>
                                    
                                 </li>
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">تماس با ما</a>
+                                    <NuxtLink  to="/contact" class="nav-link">تماس با ما</NuxtLink>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="faq.html" class="nav-link">سوالات متداول</a>
+                                    <NuxtLink  to="/faq" class="nav-link">سوالات متداول</NuxtLink>
                                 </li>
                             </ul>
                             <div class="side-nav">
