@@ -31,7 +31,7 @@
                                         <h3>بکارگیری از تجهیزات مدرن و بروز دنیا</h3>
                                         <p>لورم ایپسوم ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم استاندارد صنعت بوده است.</p>
                                     </div> -->
-                                    
+
                                         <Card />
 
                                 </div>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6" >
-                        <WhyUs />
+                        <WhyYouChooseUs />
                     </div>
                 </div>
             </div>
@@ -48,11 +48,11 @@
 </template>
 <script>
 import Card from "./card"
-import WhyUs from "./whyus"
+import WhyYouChooseUs from "../cardWithCallToActions"
 export default {
  components:{
      Card,
-     WhyUs
+     WhyYouChooseUs
  }   
 }
 </script>
