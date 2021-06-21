@@ -51,6 +51,11 @@ export default {
         Loader,
         RegisterOrderForm,
         Subscribe
+    },
+     mounted(){
+        setTimeout(() => {
+            document.querySelector(".loader").style.display="none"
+        }, 1000);
     }
 }
 </script>

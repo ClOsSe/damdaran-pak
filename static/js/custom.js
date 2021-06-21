@@ -119,9 +119,9 @@
 		url: 'https://envytheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9',
 		callback: callbackFunction
 	});
-	
-		jQuery('.loader').fadeOut(2000);
-	
+	// jQuery(window).on('load', function() {
+	// 	jQuery('.loader').fadeOut(50);
+	// });
 	$('body').append('<div id="toTop" class="back-to-top-btn"><i class="bx bxs-up-arrow-alt"></i></div>');
 	$(window).on('scroll', function() {
 		if ($(this).scrollTop() != 0) {

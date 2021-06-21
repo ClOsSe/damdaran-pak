@@ -48,6 +48,11 @@ import Loader from '@/components/loader'
 import Subscribe from '@/components/subscribe'
 import FAQ from '@/components/faq'
 export default {
+    mounted(){
+    setTimeout(() => {
+        document.querySelector(".loader").style.display="none";
+    }, 1000);
+    },
     components:{
         Loader,
         Subscribe,

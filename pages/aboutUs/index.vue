@@ -132,6 +132,11 @@ export default {
         AboutUs,
         Counter,
         Subscribe
+    },
+     mounted(){
+        setTimeout(() => {
+            document.querySelector(".loader").style.display="none"
+        }, 1000);
     }
 }
 </script>

@@ -1,9 +1,9 @@
 <template>
 	<div dir="rtl">	
          <!-- Preloader -->
-        <!-- <div class="loader"> -->
-            <!-- <Loader /> -->
-        <!-- </div> -->
+        <div class="loader">
+            <Loader />
+        </div>
         <!-- End Preloader -->
 
         <!-- Page Title -->
@@ -69,15 +69,20 @@
 	</div>
 </template>
 <script>
-// import Loader from '@/components/loader'
+import Loader from '@/components/loader'
 import Subscribe from '@/components/subscribe'
 import BlogPost from '@/components/blogPost'
 
 export default {
     components:{
-        // Loader,
+        Loader,
         Subscribe,
         BlogPost
+    },
+     mounted(){
+        setTimeout(() => {
+            document.querySelector(".loader").style.display="none"
+        }, 1000);
     }
 }
 </script>
