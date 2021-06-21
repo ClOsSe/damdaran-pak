@@ -27,7 +27,7 @@
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <NuxtLink  to="/aboutUS" class="nav-link">درباره ما</NuxtLink>
+                                    <NuxtLink  to="/aboutUs" class="nav-link">درباره ما</NuxtLink>
                                 </li>
                                 
                                
