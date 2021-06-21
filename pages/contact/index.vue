@@ -2,7 +2,7 @@
 <div dir="rtl">
           <!-- Preloader -->
         <div class="loader">
-            <!-- <Loader /> -->
+            <Loader />
         </div>
         <!-- End Preloader -->
 
@@ -35,19 +35,19 @@
 
         <!-- Location -->
         <div class="location-area pt-100 pb-70">
-           <Location/>
+           <Location />
         </div>
         <!-- End Location -->
 
         <!-- Contact -->
         <div class="contact-area pb-100">
-            <ContactForm/>
+            <ContactForm />
         </div>
         <!-- End Contact -->
 
         <!-- Map -->
         <div class="map-area pb-100">
-           <Map/>
+           <Map />
         </div>
         <!-- End Map -->
 
