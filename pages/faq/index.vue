@@ -33,81 +33,25 @@
 
         <!-- FAQ -->
         <div class="faq-area ptb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="faq-content">
-                            <ul class="accordion">
-                                <li>
-                                    <a>سوالات متداول 1</a>
-                                    <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                                </li>
-                                <li>
-                                    <a>سوالات متداول 2</a>
-                                    <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                                </li>
-                                <li>
-                                    <a>سوالات متداول 3</a>
-                                    <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                                </li>
-                                <li>
-                                    <a>سوالات متداول 4</a>
-                                    <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                                </li>
-                                <li>
-                                    <a>سوالات متداول 5</a>
-                                    <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                                </li>
-                                <li>
-                                    <a>سوالات متداول 6</a>
-                                    <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="faq-img">
-                            <img src="@/assets/img/home-two/faq.jpg" alt="FAQ">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <FAQ />
         </div>
         <!-- End FAQ -->
 
         <!-- Subscribe -->
-        <div class="subscribe-area">
-            <div class="subscribe-wrap">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="section-title">
-                                <h2>در خبرنامه ما عضو شوید</h2>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <form class="newsletter-form" data-toggle="validator">
-                                <input type="email" class="form-control" placeholder="آدرس ایمیل شما" name="EMAIL" required autocomplete="off">
-        
-                                <button class="btn cmn-btn" type="submit">
-                                    مشترک شدن
-                                </button>
-                                <div id="validator-newsletter" class="form-result"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Subscribe />
         <!-- End Subscribe -->
 
 </div>    
 </template>
 <script>
 import Loader from '@/components/loader'
+import Subscribe from '@/components/subscribe'
+import FAQ from '@/components/faq'
 export default {
     components:{
-        Loader
+        Loader,
+        Subscribe,
+        FAQ
     }
 }
 </script>
