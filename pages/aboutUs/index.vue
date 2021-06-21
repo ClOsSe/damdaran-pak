@@ -2,7 +2,7 @@
     <div dir="rtl">
            <!-- Preloader -->
         <div class="loader">
-            <Loader />
+            <!-- <Loader /> -->
         </div>
         <!-- End Preloader -->
 

@@ -3,7 +3,7 @@
         <section class="about-area">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 ">
                         <AboutUs />
                     </div>
                     <div class="col-lg-6">
