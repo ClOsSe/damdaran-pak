@@ -1,7 +1,7 @@
 <template>
   <div dir="rtl">
         <!-- Preloader -->
-        <div class="loader">
+        <div class="loader" >
             <Loader />
         </div>
         <!-- End Preloader -->
@@ -56,7 +56,13 @@ export default {
       Estimate,
       RegisterOrder,
       Subscribe
-  }
+  }, mounted(){
+        setTimeout(() => {
+            document.querySelector(".loader").style.display="none"
+        }, 1000);
+    }
+ 
+
  }
 </script>
 

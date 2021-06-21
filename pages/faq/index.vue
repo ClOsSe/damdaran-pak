@@ -106,6 +106,11 @@
 <script>
 import Loader from '@/components/loader'
 export default {
+    mounted(){
+    setTimeout(() => {
+        document.querySelector(".loader").style.display="none";
+    }, 1000);
+    },
     components:{
         Loader
     }

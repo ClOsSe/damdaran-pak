@@ -78,6 +78,11 @@ export default {
         // Loader,
         Subscribe,
         BlogPost
+    },
+     mounted(){
+        setTimeout(() => {
+            document.querySelector(".loader").style.display="none"
+        }, 1000);
     }
 }
 </script>
