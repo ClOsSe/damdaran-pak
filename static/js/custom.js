@@ -120,7 +120,7 @@
 		callback: callbackFunction
 	});
 	jQuery(window).on('load', function() {
-		jQuery('.loader').fadeOut(500);
+		jQuery('.loader').fadeOut(50);
 	});
 	$('body').append('<div id="toTop" class="back-to-top-btn"><i class="bx bxs-up-arrow-alt"></i></div>');
 	$(window).on('scroll', function() {

@@ -1,5 +1,5 @@
 <template>
-    <div dir="rtl">
+    <div dir="rtl ">
         <div class="choose-contact" >
             <div class="section-title" style="text-align:right">
                 <span class="sub-title">چرا ما را انتخاب می کنید</span>
