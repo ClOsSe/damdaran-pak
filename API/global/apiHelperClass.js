@@ -28,6 +28,19 @@ class HelperClass{
             }
         })
     }
+    // helperclass import
+    // getSomething(){
+        // helperclass.postRequest().then((res)=>{
+            // function(res)
+        // }).catch((err)=>{
+            // helperclass.showError(err)
+        // })
+        // helperclass.getRequest().then((res)=>{
+            // function(res)
+        // }).catch((err)=>{
+            // helperclass.showError(err)
+        // })
+    // }
 }
 
 
