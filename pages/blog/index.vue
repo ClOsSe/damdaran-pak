@@ -72,6 +72,7 @@
 import Loader from '@/components/loader'
 import Subscribe from '@/components/subscribe'
 import BlogPost from '@/components/blogPost'
+// import blogsAPI from '@/API/API/blogsAPI'
 
 export default {
     components:{
@@ -80,9 +81,17 @@ export default {
         BlogPost
     },
      mounted(){
+        //  this.getRandomBlogs();
         setTimeout(() => {
             document.querySelector(".loader").style.display="none"
         }, 1000);
+    },
+    methods:{
+        // getRandomBlogs(){
+            // blogsAPI.getTenRandomArticle().then((res)=>{
+                // console.log(res)
+            // })
+        // }
     }
 }
 </script>

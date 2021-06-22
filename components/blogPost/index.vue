@@ -31,3 +31,19 @@
         </div>
     </div>    
 </template>
+<script>
+    import blogsAPI from '@/API/API/blogsAPI'
+
+export default {
+    mounted(){
+        // this.getRandomBlogs();
+    },
+    methods:{
+        // getRandomBlogs(){
+        //     blogsAPI.getRandomArticle().then((res)=>{
+        //         console.log(res)
+        //     })
+        // }
+    }
+}
+</script>
