@@ -50,18 +50,7 @@
 	});
 	$('select').niceSelect();
 	$('.accordion > li:eq(0) a').addClass('active').next().slideDown();
-	$('.accordion a').on('click', function(j) {
-		var dropDown = $(this).closest('li').find('p');
-		$(this).closest('.accordion').find('p').not(dropDown).slideUp();
-		if ($(this).hasClass('active')) {
-			$(this).removeClass('active');
-		} else {
-			$(this).closest('.accordion').find('a.active').removeClass('active');
-			$(this).addClass('active');
-		}
-		dropDown.stop(false, true).slideToggle();
-		j.preventDefault();
-	});
+
 	let getDaysId = document.getElementById('days');
 	if (getDaysId !== null) {
 		const second = 1000;
@@ -119,9 +108,7 @@
 		url: 'https://envytheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9',
 		callback: callbackFunction
 	});
-	// jQuery(window).on('load', function() {
-	// 	jQuery('.loader').fadeOut(50);
-	// });
+	
 	$('body').append('<div id="toTop" class="back-to-top-btn"><i class="bx bxs-up-arrow-alt"></i></div>');
 	$(window).on('scroll', function() {
 		if ($(this).scrollTop() != 0) {
