@@ -6,7 +6,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
+/pages/aboutUs/index.vue
 # Runtime data
 pids
 *.pid

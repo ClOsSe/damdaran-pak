@@ -11,7 +11,7 @@ vue.use(vuex);
 
 
 const store = () => {
-    return new vuex.store({
+    return new vuex.Store({
         state,
         actions,
         mutations,
