@@ -33,6 +33,10 @@
         <!-- Subscribe -->
         <Subscribe />
         <!-- End Subscribe -->
+        <div style="background:black">
+      {{articles}}
+
+        </div>
   </div>
 </template>
 
@@ -47,6 +51,26 @@ import Subscribe from '../components/subscribe'
 import Loader from '../components/loader'
 
 export default {
+    async asyncData(context){
+        let axios=context.$axios;
+        // let error=context.error;
+// error({message:'error',statusCode:503})
+        
+        // let store=context.store;
+        let articles=await axios.get('/settings').then();
+        console.log(articles);
+        return {
+            articles
+        }
+    },
+    // head(){
+    //   return {
+    //       title:this.articles,
+    //       meta:[
+    //           {name:'description',content:''}
+    //       ]
+    //   }  
+    // },
   components:{
       Banner,
       Loader,
@@ -61,6 +85,8 @@ export default {
         setTimeout(() => {
             document.querySelector(".loader").style.display="none"
         }, 1000);
-    }
+    },
+   
+   
 }
 </script>
