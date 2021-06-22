@@ -38,54 +38,54 @@
           <div class="col-lg-6">
             <div class="faq-content">
               <ul class="accordion">
-                <li @click="clickfaqItem($event)">
-                  <a>سوالات متداول 1</a>
-                  <p class="pclass">
+                <li @click="clickfaqItem(1)">
+                  <a :class="activIndex === 1 ? 'active' : ''">سوالات متداول 1</a>
+                  <p  :class="activIndex === 1 ? 'ggg' : ''">
                     لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم
                     ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به
                     سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت
                     40 سال استاندارد صنعت بوده است.
                   </p>
                 </li>
-                <li @click="clickfaqItem($event)">
-                  <a>سوالات متداول 2</a>
-                  <p class="pclass">
+                <li @click="clickfaqItem(2)">
+                  <a :class="activIndex === 2 ? 'active' : ''">سوالات متداول 2</a>
+                  <p class="pclass" :class="activIndex === 2 ? 'ggg' : ''">
                     لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم
                     ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به
                     سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت
                     40 سال استاندارد صنعت بوده است.
                   </p>
                 </li>
-                <li @click="clickfaqItem($event)">
-                  <a>سوالات متداول 3</a>
-                  <p class="pclass">
+                <li @click="clickfaqItem(3)">
+                  <a :class="activIndex === 3 ? 'active' : ''">سوالات متداول 3</a>
+                  <p class="pclass" :class="activIndex === 3 ? 'ggg' : ''">
                     لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم
                     ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به
                     سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت
                     40 سال استاندارد صنعت بوده است.
                   </p>
                 </li>
-                <li @click="clickfaqItem($event)">
-                  <a>سوالات متداول 4</a>
-                  <p class="pclass">
+                <li @click="clickfaqItem(4)">
+                  <a :class="activIndex === 4 ? 'active' : ''">سوالات متداول 4</a>
+                  <p class="pclass" :class="activIndex === 4 ? 'ggg' : ''">
                     لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم
                     ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به
                     سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت
                     40 سال استاندارد صنعت بوده است.
                   </p>
                 </li>
-                <li @click="clickfaqItem($event)">
-                  <a>سوالات متداول 5</a>
-                  <p class="pclass">
+                <li @click="clickfaqItem(5)">
+                  <a :class="activIndex === 5 ? 'active' : ''">سوالات متداول 5</a>
+                  <p class="pclass" :class="activIndex === 5 ? 'ggg' : ''">
                     لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم
                     ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به
                     سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت
                     40 سال استاندارد صنعت بوده است.
                   </p>
                 </li>
-                <li @click="clickfaqItem($event)">
-                  <a>سوالات متداول 6</a>
-                  <p class="pclass">
+                <li @click="clickfaqItem(6)">
+                  <a :class="activIndex === 6 ? 'active' : ''">سوالات متداول 6</a>
+                  <p class="pclass" :class="activIndex === 6 ? 'ggg' : ''">
                     لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم
                     ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به
                     سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت
@@ -142,15 +142,20 @@
 <script>
 import Loader from "@/components/loader";
 export default {
+  data() {
+    return {
+      activIndex:10
+    };
+  },
   mounted() {
     setTimeout(() => {
       document.querySelector(".loader").style.display = "none";
     }, 1000);
   },
   methods: {
-    clickfaqItem(e) {
-      console.log("e.target",e.target.parentElement.lastChild);
-      e.target.parentElement.lastChild.style.display="block"
+    clickfaqItem(index) {
+      this.activIndex=index;
+      console.log(this.activIndex);
     }
   },
   components: {
@@ -158,3 +163,14 @@ export default {
   }
 };
 </script>
+<style scoped>
+.block {
+  display: block !important;
+}
+.none{
+  display: none !important;
+}
+.ggg{
+  display: block !important;
+}
+</style>
