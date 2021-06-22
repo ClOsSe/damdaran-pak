@@ -29,13 +29,16 @@
         </div>
       </div>
     </div>
+  
     <!-- End Page Title -->
+
 
     <!-- FAQ -->
     <div class="faq-area ptb-100">
       <Faq />
     </div>
     <!-- End FAQ -->
+
 
     <!-- Subscribe -->
     <div class="subscribe-area">
@@ -73,14 +76,24 @@
 </template>
 <script>
 import Loader from "@/components/loader";
+
 import Faq from "@/components/faq";
-export default {
+
  
+
+export default {
+  data() {
+    return {
+      activIndex:10
+    };
+  },
+
   mounted() {
     setTimeout(() => {
       document.querySelector(".loader").style.display = "none";
     }, 1000);
   },
+
   components: {
     Loader,
     Faq
@@ -88,4 +101,17 @@ export default {
  
 };
 </script>
+
+
+<style scoped>
+.block {
+  display: block !important;
+}
+.none{
+  display: none !important;
+}
+.ggg{
+  display: block !important;
+}
+</style>
 

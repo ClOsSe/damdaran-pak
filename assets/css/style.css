@@ -1485,6 +1485,7 @@ footer {
 }
 .faq-area .faq-content .accordion a:after {
 	position: absolute;
+
 	content: "+";
 	top: 10px;
 	color: #000;
