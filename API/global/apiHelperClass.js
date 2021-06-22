@@ -1,12 +1,11 @@
 import axios from "axios";
 
-
 class HelperClass{
-    postRequest(store,url,data = null){
+    postRequest(url,data = null){
             return axios.post(`${store.state.BaseUrl}${url}`,data,{
             })
     }
-    getRequest(store,url){
+    getRequest(url){
         return axios.get(`${store.state.BaseUrl}${url}`,{
         })
     }

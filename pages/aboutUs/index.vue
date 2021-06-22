@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <AboutUs  :selected="aboutUs" />
+                        <AboutUs  />
                     </div>
                 </div>
             </div>
@@ -126,16 +126,19 @@ import Loader from '@/components/loader'
 import AboutUs from '@/components/cardWithCallToActions'
 import Counter from '@/components/counter'
 import Subscribe from '@/components/subscribe'
-import HelperClass from '@/API/global/apiHelperClass.js'
+// import aboutUsAPI from '@/API/asyncAPI/aboutUsAPI'
+
 export default {
-    async asyncData(context){
-        let aboutUs = await HelperClass.getRequest(context.store,'/settings').then((res)=>{
-            return res.data.data.aboutUs;
-        })
-        return{
-            aboutUs
-        }
-    },  
+    // async asyncData(){
+        
+            // actions.dispatch('getAboutUs').then(data=>console.log(data))
+            // let aboutUs  = await aboutUsAPI.getSettingInformation((res)=>{
+                // return res
+            // })
+            // return {aboutUs};
+            // async => (.js (address))=>
+            // not async
+    // },  
     components:{
         Loader,
         AboutUs,

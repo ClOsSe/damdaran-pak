@@ -1,5 +1,5 @@
 export default{
-    getSomeThings(state){
-        return state
-    }
+    // getSomeThings(state){
+    //     return state
+    // }
 }
