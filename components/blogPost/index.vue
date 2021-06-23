@@ -32,18 +32,15 @@
     </div>    
 </template>
 <script>
-    import blogsAPI from '@/API/API/blogsAPI'
+    import blogsAPI from '@/API/asyncAPI/blogsAPI'
 
 export default {
-    created(){
-        // this.getRandomBlogs();
-    },
-    methods:{
-        // getRandomBlogs(){
-        //     blogsAPI.getRandomArticle().then((res)=>{
-        //         console.log(res)
-        //     })
-        // }
+    async asyncData(){
+        let allBlogs = await blogsAPI.getAllArticles().then((res)=>{
+            return res
+        })
+        console.log(allBlogs)
+        
     }
 }
 </script>
