@@ -134,16 +134,39 @@
 import Loader from '@/components/loader'
 import Subscribe from '@/components/subscribe'
 import SideColumn from '@/components/blogSidepanel'
+// import blogsAPI from '@/API/API/blogsAPI'
+// import commentsAPI from '@/API/API/commentsAPI'
 export default {
     components:{
         Loader,
         Subscribe,
         SideColumn
     },
+    created(){
+        //  this.getBlogDetails();
+        // this.getComments();
+    },
      mounted(){
         setTimeout(() => {
             document.querySelector(".loader").style.display="none"
         }, 1000);
+    },
+    methods:{
+        // getBlogDetails(slug){
+        //     blogsAPI.getSpecificArticle(slug).then((res)=>{
+        //         console.log(res)
+        //     }).catch((error)=>{
+        //         console.log(error)
+        //     })
+        // },
+        // getComments(slug){
+        //     commentsAPI.getAllcomment(slug).then((res)=>{
+        //         console.log(res)
+        // }).catch((error)=>{
+        //     console.log(error)
+        // })
+        // }
     }
+
 }
 </script>
