@@ -9,7 +9,7 @@
                         <div class="col-sm-6 col-lg-6">
                             <div class="form-group">
                                 <label>نام</label>
-                                <input type="text" name="name" id="name" class="form-control" required data-error="لطفا نام خود را وارد کنید">
+                                <input v-model="contactForm.name" type="text" name="name" id="name" class="form-control" required data-error="لطفا نام خود را وارد کنید">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -17,7 +17,7 @@
                         <div class="col-sm-6 col-lg-6">
                             <div class="form-group">
                                 <label>ایمیل</label>
-                                <input type="email" name="email" id="email" class="form-control" required data-error="لطفا ایمیل خود را وارد کنید">
+                                <input v-model="contactForm.email" type="email" name="email" id="email" class="form-control" required data-error="لطفا ایمیل خود را وارد کنید">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -25,7 +25,7 @@
                         <div class="col-sm-6 col-lg-6">
                             <div class="form-group">
                                 <label>تلفن</label>
-                                <input type="text" name="phone_number" id="phone_number" required data-error="لطفا تلفن خود را وارد کنید" class="form-control">
+                                <input v-model="contactForm.phone_number" type="text" name="phone_number" id="phone_number" required data-error="لطفا تلفن خود را وارد کنید" class="form-control">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                         <div class="col-sm-6 col-lg-6">
                             <div class="form-group">
                                 <label>موضوع</label>
-                                <input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="لطفا موضوع خود را وارد کنید">
+                                <input v-model="contactForm.subject" type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="لطفا موضوع خود را وارد کنید">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                         <div class="col-md-12 col-lg-12">
                             <div class="form-group">
                                 <label>پیام</label>
-                                <textarea name="message" class="form-control" id="message" cols="30" rows="8" required data-error="پیام خود را بنویسید"></textarea>
+                                <textarea v-model="contactForm.message" name="message" class="form-control" id="message" cols="30" rows="8" required data-error="پیام خود را بنویسید"></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -58,6 +58,22 @@
             </div>
     </div>
 </template>
+<script>
+export default {
+    data(){
+        return {
+            contactForm:{
+                name : '',
+                email : '',
+                phone_number : '',
+                subject : '',
+                message : '',
+
+            }
+        }
+    }
+}
+</script>
 <style scoped>
 .form-group{
     text-align: right !important;
