@@ -64,24 +64,13 @@
                                 </blockquote>
                                 <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
                             </div>
+                            <!-- comment -->
                             <div class="details-comments">
-                                <h3>نظرات (02)</h3>
-                                <ul>
-                                    <li>
-                                        <img src="assets/img/home-one/review1.jpg" alt="Details">
-                                        <h4>جان اسمیت</h4>
-                                        <span>20 دی 1398</span>
-                                        <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.  لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                                        <a href="#">پاسخ</a>
-                                    </li>
-                                    <li>
-                                        <img src="assets/img/home-one/review2.jpg" alt="Details">
-                                        <h4>جان اسمیت</h4>
-                                        <span>20 دی 1398</span>
-                                        <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                                        <a href="#">پاسخ</a>
-                                    </li>
-                                </ul>
+                                <h3>نظرات</h3>
+                                    <CommentCart 
+                                    v-for="item in Comments"
+                                    :key="item.name"
+                                    v-bind="item" />
                             </div>
                             <div class="details-form">
                                 <h3>پاسخ دهید</h3>
@@ -134,6 +123,7 @@
 import Loader from '@/components/loader'
 import Subscribe from '@/components/subscribe'
 import SideColumn from '@/components/blogSidepanel'
+import CommentCart from '@/components/commentCart'
 import blogsAPI from '@/API/asyncAPI/blogsAPI'
 import commentsAPI from '@/API/API/commentsAPI'
 export default {
