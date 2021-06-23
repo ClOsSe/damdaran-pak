@@ -65,16 +65,21 @@
         <!-- Subscribe -->
         <Subscribe />
         <!-- End Subscribe -->
-
 	</div>
 </template>
 <script>
 import Loader from '@/components/loader'
 import Subscribe from '@/components/subscribe'
 import BlogPost from '@/components/blogPost'
-// import blogsAPI from '@/API/API/blogsAPI'
+import blogsAPI from '@/API/asyncAPI/blogsAPI'
 
 export default {
+    async asyncData(){
+        let allArticles = await blogsAPI.getAllArticles().then((res)=>{
+            return res
+        })
+        return{allArticles}
+    },
     components:{
         Loader,
         Subscribe,

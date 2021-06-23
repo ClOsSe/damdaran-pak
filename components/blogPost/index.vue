@@ -37,10 +37,11 @@
 export default {
     async asyncData(){
         let allBlogs = await blogsAPI.getAllArticles().then((res)=>{
+            console.log('test')
+            console.log(res)
             return res
         })
         console.log(allBlogs)
-        
     }
 }
 </script>

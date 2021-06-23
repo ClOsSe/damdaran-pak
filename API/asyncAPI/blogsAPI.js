@@ -1,5 +1,5 @@
 
-import HelperClass from '../global/apiHelperClass'
+import HelperClass from '@/API/global/apiHelperClass'
 class AboutUs {
     //get 10 random articles
     getRandomArticle(){
@@ -14,8 +14,8 @@ class AboutUs {
         return HelperClass.getRequest(`get-article-level-on-categories`)
     }
     //get specific article with slug
-    getSpecificArticle(){
-        return HelperClass.getRequest(`/article/{article}`)
+    getSpecificArticle(slug){
+        return HelperClass.getRequest(`/article/${slug}`)
     };
     //get popular articles
     getPopularArticles(){

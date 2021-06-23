@@ -92,23 +92,23 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>نام*</label>
-                                                <input type="text" class="form-control">
+                                                <input v-model="comments.name" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>ایمیل*</label>
-                                                <input type="email" class="form-control">
+                                                <input v-model="comments.email" type="email" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label>نظر</label>
-                                                <textarea id="your-comment" rows="10" class="form-control"></textarea>
+                                                <textarea v-model="comments.message" id="your-comment" rows="10" class="form-control"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <button type="submit" class="btn cmn-btn">ارسال</button>
+                                            <button @click="postUserComment(this.slug)" type="submit" class="btn cmn-btn">ارسال</button>
                                         </div>
                                     </div>
                                 </form>
@@ -134,17 +134,44 @@
 import Loader from '@/components/loader'
 import Subscribe from '@/components/subscribe'
 import SideColumn from '@/components/blogSidepanel'
-// import blogsAPI from '@/API/API/blogsAPI'
-// import commentsAPI from '@/API/API/commentsAPI'
+import blogsAPI from '@/API/asyncAPI/blogsAPI'
+import commentsAPI from '@/API/API/commentsAPI'
 export default {
+    async asyncData(){
+        // fetch data
+        getAllcomments();
+        getSpecificArticle();
+        // get one article with slug
+        async function getSpecificArticle (slug) {
+            let Details = await blogsAPI.getSpecificArticle(slug).then((Articel)=>{
+            return Articel
+        })
+        return {Details};
+        }
+        // get all comments based on slug
+        async function getAllcomments (slug) {
+            let Comments = await commentsAPI.getAllcomments(slug).then((AllComments)=>{
+                return AllComments
+            })
+        return {Comments}
+        }
+                
+    },
+    data(){
+        return{
+            comments:{
+                name:'',
+                email:'',
+                message:''
+            },
+            slug : 'test',
+            userid : 'test',
+        }
+    },
     components:{
         Loader,
         Subscribe,
         SideColumn
-    },
-    created(){
-        //  this.getBlogDetails();
-        // this.getComments();
     },
      mounted(){
         setTimeout(() => {
@@ -152,20 +179,21 @@ export default {
         }, 1000);
     },
     methods:{
-        // getBlogDetails(slug){
-        //     blogsAPI.getSpecificArticle(slug).then((res)=>{
-        //         console.log(res)
-        //     }).catch((error)=>{
-        //         console.log(error)
-        //     })
-        // },
-        // getComments(slug){
-        //     commentsAPI.getAllcomment(slug).then((res)=>{
-        //         console.log(res)
-        // }).catch((error)=>{
-        //     console.log(error)
-        // })
-        // }
+        // post user comments
+        postUserComment(slug){
+            let formdata = new FormData();
+            formdata.append('name',this.comments.name)
+            formdata.append('email',this.comments.email)
+            formdata.append('text',this.comments.message)
+            formdata.append('parent',this.slug)
+            formdata.append('user_id',this.userid)
+            commentsAPI.postUserComment(slug,formdata).then((res)=>{
+                console.log(res)
+            }).catch((err)=>{
+                console.log(err)
+            })
+
+        }
     }
 
 }
