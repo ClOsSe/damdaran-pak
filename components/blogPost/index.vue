@@ -35,7 +35,7 @@
     import blogsAPI from '@/API/API/blogsAPI'
 
 export default {
-    mounted(){
+    created(){
         // this.getRandomBlogs();
     },
     methods:{
