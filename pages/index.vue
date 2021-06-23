@@ -27,14 +27,14 @@
         <!-- End Review -->
 
         <!-- Estimate -->
-        <Estimate />
+        <Estimate 
+        :selected="Comments"
+         />
         <!-- End Estimate -->
         
         <!-- Subscribe -->
         <Subscribe />
         <!-- End Subscribe -->
-        <div style="background:black">
-        </div>
   </div>
 </template>
 
@@ -47,9 +47,18 @@ import Estimate from '../components/Estimate'
 import RegisterOrder from '../components/registerOrderForm'
 import Subscribe from '../components/subscribe'
 import Loader from '../components/loader'
+import generalAPI from '@/API/asyncAPI/generalAPI'
 
 export default {
-    // async asyncData(context){
+    
+    async asyncData(){
+        getAllcomments();
+        async function getAllcomments (slug) {
+            let Comments = await commentsAPI.getAllcomments(slug).then((AllComments)=>{
+                return AllComments
+            })
+        return {Comments}
+        }
         // let error=context.error;
         // error({message:'error',statusCode:503})
         // let store=context.store;
@@ -70,10 +79,9 @@ export default {
     //           {name:'description',content:''}
     //       ]
     //   }  
-    // },
+    },
     data(){
         return{
-            
         }
     },
     components:{
@@ -87,10 +95,21 @@ export default {
       Subscribe
   }, 
   mounted(){
+      this.getSocialMediaLink();
         setTimeout(() => {
             document.querySelector(".loader").style.display="none"
         }, 1000);
     },
+    methods:{
+        // getSocialMedia Link
+        getSocialMediaLink(){
+            generalAPI.getGeneralInformation().then((res)=>{
+                cosole.log(res)
+        }).catch((err)=>{
+            console.log(err)
+        })
+        }
+    }
    
    
 }

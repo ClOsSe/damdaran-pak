@@ -53,6 +53,24 @@
                     </nav>
                 </div>
             </div>
+            
         </div>
     </div>    
 </template>
+<script>
+// import generalAPI from '@/API/asyncAPI/generalAPI'
+export default {
+    // async asyncData(){
+    //     cosole.log('************************************************')
+    //     let socialMediaLink = await generalAPI.getGeneralInformation().then((res)=>{
+    //         cosole.log(res)
+    //         return res
+
+    //     })
+    //     return {
+    //         socialMediaLink
+    //         };
+    // },
+   
+}
+</script>

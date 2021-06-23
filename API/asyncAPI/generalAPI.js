@@ -2,7 +2,7 @@
 
 import HelperClass from '../global/apiHelperClass'
 class AboutUs {
-    getSettingInformation(){
+    getGeneralInformation(){
         return HelperClass.getRequest('/settings')
     }
 }

@@ -10,106 +10,34 @@
                         <span class="sub-title">بازخورد مشتریان</span>
                         <h2>مشتریان ما چه می گویند</h2>
                     </div>
-                    <div dir="ltr" id="review-slider" class="review-slider owl-theme owl-carousel">
-                        <div class="review-item">
-                            <img src="@/assets/img/home-one/review1.jpg" alt="Review">
-                            <h3>جان اسمیت</h3>
-                            <span>بازاریاب</span>
-                            <ul>
-                                <li>
-                                    <i class='bx bxs-star checked'></i>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-star checked'></i>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-star checked'></i>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-star checked'></i>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-star checked'></i>
-                                </li>
-                            </ul>
-                            <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                        </div>
-                        
+                    <div dir="ltr">
+                        <carousel :perPageCustom="[[0, 1],[320, 1],[380, 1], [412, 1],[1199, 2]]">
+                           <slide
+                            v-for="person in selected"
+                            :key="person.name"
+                              data-index="3"
+                              data-name="MySlideName"
+                              >
+                            <div  dir="rtl" class="review-slider">
+                                <div class="review-item">
+                                    <div class="d-flex align-items-center flex-column p-3 content">
+                                    <img :src="person.avatar" alt="Review">
+                                    <h4>{{person.name}}</h4>
+                                    <p>{{person.text}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </slide>
+                        </carousel>
                     </div>
                 </div>
             </client-only>
         </section>
-        <div dir="ltr">
-            <carousel  :perPageCustom="[[0, 1],[320, 1],[380, 1], [412, 1],[1199, 2]]">
-              <slide
-                  data-index="0"
-                  data-name="MySlideName"
-                  >
-                <div class="review-slider">
-                    <div class="review-item">
-                        <div class="d-flex align-items-center flex-column p-3 content">
-                        <img src="@/assets/img/home-one/review1.jpg" alt="Review">
-                            <h3>جان اسمیت</h3>
-                            <span>بازاریاب</span>
-                           
-                            <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                        </div>
-                    </div>
-                </div>
-              </slide>
-               <slide
-                  data-index="1"
-                  data-name="MySlideName"
-                  >
-                <div class="review-slider">
-                    <div class="review-item">
-                        <div class="d-flex align-items-center flex-column p-3 content">
-                        <img src="@/assets/img/home-one/review1.jpg" alt="Review">
-                            <h3>جان اسمیت</h3>
-                            <span>بازاریاب</span>
-                            
-                            <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                        </div>
-                    </div>
-                </div>
-              </slide>
-               <slide
-                  data-index="2"
-                  data-name="MySlideName"
-                  >
-                <div class="review-slider">
-                    <div class="review-item">
-                        <div class="d-flex align-items-center flex-column p-3 content">
-                        <img src="@/assets/img/home-one/review1.jpg" alt="Review">
-                            <h3>جان اسمیت</h3>
-                            <span>بازاریاب</span>
-                            
-                            <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                        </div>
-                    </div>
-                </div>
-              </slide>
-               <slide
-                  data-index="3"
-                  data-name="MySlideName"
-                  >
-                <div class="review-slider">
-                    <div class="review-item">
-                        <div class="d-flex align-items-center flex-column p-3 content">
-                        <img src="@/assets/img/home-one/review1.jpg" alt="Review">
-                            <h3>جان اسمیت</h3>
-                            <span>بازاریاب</span>
-                            <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
-                        </div>
-                    </div>
-                </div>
-              </slide>
-            </carousel>
-        </div>
     </div>
 </template>
 <script>
 export default {
+    props:["selected"],
     data(){
         return{
             
