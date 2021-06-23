@@ -27,7 +27,7 @@
         <!-- End Review -->
 
         <!-- Estimate -->
-        <Estimate 
+        <Estimate v-show="Comments"
         :selected="Comments"
          />
         <!-- End Estimate -->
