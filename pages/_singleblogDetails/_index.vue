@@ -103,6 +103,7 @@ import blogsAPI from '@/API/asyncAPI/blogsAPI'
 import commentsAPI from '@/API/API/commentsAPI'
 import SendComment from '@/components/sendCommentCart'
 
+
 export default {
     async asyncData(){
         // fetch data
@@ -138,9 +139,22 @@ export default {
         SendComment,
     },
      mounted(){
+         if(!localStorage.getItem('userVisited')){
+            //  data = id or slug
+             this.isUserVisitedBlog(data);
+         }
         setTimeout(() => {
             document.querySelector(".loader").style.display="none"
         }, 1000);
     },
+    methods:{
+        isUserVisitedBlog(data){
+            blogsAPI.addNewVisitToArticles(data).then((res)=>{
+                console.log(res);
+            }).catch((err)=>{
+                console.log(err)
+            })
+        }
+    }
 }
 </script>
