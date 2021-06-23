@@ -1,6 +1,6 @@
 
 
-import HelperClass from `../global/apiHelperClass`
+import HelperClass from '../global/apiHelperClass'
 class Comments {
     //get all samples
     getAllSamples(slug){

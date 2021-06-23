@@ -1,5 +1,5 @@
-import store from "../store/vuex";
-import swal from "sweetalert2";
+// import store from "../store/vuex";
+// import swal from "sweetalert2";
 
 class HelperClass {
 
@@ -16,7 +16,7 @@ class HelperClass {
 
     // show the server errors
     showErrors(error, noty) {
-        store.state.loading = false
+        // store.state.loading = false
         if (error.response) {
             let errors = error.response.data.errors
             if (typeof (errors) != "undefined") {

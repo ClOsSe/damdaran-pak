@@ -11,9 +11,9 @@
                         </div>
                         <div class="col-lg-6">
                             <form class="newsletter-form" data-toggle="validator">
-                                <input type="email" class="form-control" placeholder="آدرس ایمیل شما" name="EMAIL" required autocomplete="off">
+                                <input style="text-align:left !important;" v-model="email" type="email" class="form-control" placeholder="آدرس ایمیل شما" name="EMAIL" required autocomplete="off">
         
-                                <button class="btn cmn-btn" type="submit">
+                                <button @click="subscribe(email)" class="btn cmn-btn" type="submit">
                                     مشترک شدن
                                 </button>
                                 <div id="validator-newsletter" class="form-result"></div>
@@ -25,3 +25,25 @@
         </div>
 </div>
 </template>
+<script>
+import membership from '@/API/API/membership';
+// import HelperClass from '@/API/global/HelperClass'
+export default {
+    data(){
+        return{
+            email:''
+        }
+    },
+    methods:{
+        // send email
+        subscribe(email){
+            membership.requestToJoinMagazine(email).then((res)=>{
+                console.log(res)
+            }).catch((error)=>{
+                console.log(error)
+                // HelperClass.showErrors(error,this.$noty)
+            })
+        }
+    }
+}
+</script>
