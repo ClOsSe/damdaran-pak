@@ -36,11 +36,14 @@ export default {
     },
     methods:{
         // send email
-        subscribe(email){
-            membership.requestToJoinMagazine(email).then((res)=>{
+        subscribe(e,email){
+            let formdata = new FormData();
+            formdata.append('email',email)
+            membership.requestToJoinMagazine(formdata).then((res)=>{
                 console.log(res)
             }).catch((error)=>{
                 console.log(error)
+                e.preventDefault();
                 // HelperClass.showErrors(error,this.$noty)
             })
         }
