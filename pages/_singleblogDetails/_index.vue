@@ -64,7 +64,7 @@
                                 </blockquote>
                                 <p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
                             </div>
-                            <!-- comment -->
+                            <!-- comment cart -->
                             <div class="details-comments">
                                 <h3>نظرات</h3>
                                     <CommentCart 
@@ -72,35 +72,10 @@
                                     :key="item.name"
                                     v-bind="item" />
                             </div>
-                            <div class="details-form">
-                                <h3>پاسخ دهید</h3>
-                                <span>آدرس ایمیل شما منتشر نخواهد شد. قسمتهای مورد نیاز علامت گذاری شده اند *</span>
+                            <!-- end comment cart -->
 
-                                <form>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label>نام*</label>
-                                                <input v-model="comments.name" type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label>ایمیل*</label>
-                                                <input v-model="comments.email" type="email" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label>نظر</label>
-                                                <textarea v-model="comments.message" id="your-comment" rows="10" class="form-control"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <button @click="postUserComment(this.slug)" type="submit" class="btn cmn-btn">ارسال</button>
-                                        </div>
-                                    </div>
-                                </form>
+                            <div class="details-form">
+                                <SendComment />
                             </div>
                         </div>
                     </div>
@@ -126,6 +101,8 @@ import SideColumn from '@/components/blogSidepanel'
 import CommentCart from '@/components/commentCart'
 import blogsAPI from '@/API/asyncAPI/blogsAPI'
 import commentsAPI from '@/API/API/commentsAPI'
+import SendComment from '@/components/sendCommentCart'
+
 export default {
     async asyncData(){
         // fetch data
@@ -149,11 +126,6 @@ export default {
     },
     data(){
         return{
-            comments:{
-                name:'',
-                email:'',
-                message:''
-            },
             slug : 'test',
             userid : 'test',
         }
@@ -161,30 +133,14 @@ export default {
     components:{
         Loader,
         Subscribe,
-        SideColumn
+        SideColumn,
+        CommentCart,
+        SendComment,
     },
      mounted(){
         setTimeout(() => {
             document.querySelector(".loader").style.display="none"
         }, 1000);
     },
-    methods:{
-        // post user comments
-        postUserComment(slug){
-            let formdata = new FormData();
-            formdata.append('name',this.comments.name)
-            formdata.append('email',this.comments.email)
-            formdata.append('text',this.comments.message)
-            formdata.append('parent',this.slug)
-            formdata.append('user_id',this.userid)
-            commentsAPI.postUserComment(slug,formdata).then((res)=>{
-                console.log(res)
-            }).catch((err)=>{
-                console.log(err)
-            })
-
-        }
-    }
-
 }
 </script>

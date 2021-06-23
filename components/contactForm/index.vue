@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="container">
+    <div dir="rtl">
+        <div class="container" style="text-aligh:right">
                 <div class="section-title">
                     <h2>با ما در ارتباط باشید</h2>
                 </div>
@@ -58,3 +58,9 @@
             </div>
     </div>
 </template>
+<style scoped>
+.form-group{
+    text-align: right !important;
+}
+
+</style>
