@@ -10,10 +10,10 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <form class="newsletter-form" data-toggle="validator">
+                            <form @submit.prevent="subscribe()" class="newsletter-form" data-toggle="validator">
                                 <input style="text-align:left !important;" v-model="email" type="email" class="form-control" placeholder="آدرس ایمیل شما" name="EMAIL" required autocomplete="off">
         
-                                <button @click="subscribe(email)" class="btn cmn-btn" type="submit">
+                                <button @click.prevent="subscribe($event,email)" class="btn cmn-btn" type="submit">
                                     مشترک شدن
                                 </button>
                                 <div id="validator-newsletter" class="form-result"></div>
@@ -37,12 +37,13 @@ export default {
     methods:{
         // send email
         subscribe(e,email){
+            e.preventDefault();
             let formdata = new FormData();
             formdata.append('email',email)
             membership.requestToJoinMagazine(formdata).then((res)=>{
                 console.log(res)
             }).catch((error)=>{
-                console.log(error)
+                console.log(error.response.data.errors)
                 e.preventDefault();
                 // HelperClass.showErrors(error,this.$noty)
             })

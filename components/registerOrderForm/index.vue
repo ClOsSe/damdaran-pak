@@ -6,7 +6,7 @@
                     <div class="section-title">
                         <h2>ثبت سفارش</h2>
                     </div>
-                    <form>
+                    <form @submit.prevent="submitOrder()">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                <button @click="submitOrder()" type="submit" class="btn cmn-btn">دریافت برنامه</button>
+                                <button @click.prevent="submitOrder($event)" type="submit" class="btn cmn-btn">دریافت برنامه</button>
                             </div>
                         </div>
                     </form>
@@ -58,7 +58,8 @@ export default {
         }
     },
     methods:{
-        submitOrder(){
+        submitOrder(e){
+            e.preventDefault();
             let isFormCompleted = false;
             if(
                 this.order.name.length !== '' && 
@@ -76,14 +77,21 @@ export default {
             if(isFormCompleted == true){
                 let formdata = new FormData();
                 formdata.append('full_name',this.order.name)  
-                formdata.append('call',this.order.phoneNumber)  
+                formdata.append('cell',this.order.phoneNumber)  
                 formdata.append('email',this.order.emailAddress)  
                 formdata.append('title',this.order.Subject)  
                 formdata.append('description',this.order.message)  
                 userOrder.sendOrder(formdata).then((res)=>{
+                this.order.name.length = '';
+                this.order.phoneNumber.length = '';
+                this.order.emailAddress.length = '';
+                this.order.Subject.length = '';
+                this.order.message.length = '';
                     console.log(res)
-                }).catch((err)=>{
-                    console.log(err)
+                }).catch((error)=> {
+                    error.response.data ? 
+                    console.log(error.response.data.errors) 
+                    : '' ;
                 })
             }
         }
