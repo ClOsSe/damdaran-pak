@@ -77,6 +77,7 @@
 </template>
 <script>
 import userOrder from "@/API/API/userOrder";
+import HelperClass from "@/API/global/HelperClass";
 export default {
   data() {
     return {
@@ -113,16 +114,16 @@ export default {
         formdata.append("description", this.order.message);
         userOrder
           .sendOrder(formdata)
-          .then(res => {
+          .then(() => {
             this.order.name = "";
             this.order.phoneNumber = "";
             this.order.emailAddress = "";
             this.order.Subject = "";
             this.order.message = "";
-            console.log(res);
+            this.$noty.success("فرم با موفقیت ارسال شد");
           })
           .catch(error => {
-            error.response ? console.log(error.response.data.errors) : "";
+            HelperClass.showErrors(error, this.$noty);
           });
       }
     }
