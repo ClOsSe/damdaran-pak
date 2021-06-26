@@ -63,17 +63,20 @@
   </div>
 </template>
 <script>
-// import generalAPI from '@/API/asyncAPI/generalAPI'
+import GeneralAPI from "@/API/asyncAPI/generalAPI.js";
 export default {
-  // async asyncData(){
-  //     cosole.log('************************************************')
-  //     let socialMediaLink = await generalAPI.getGeneralInformation().then((res)=>{
-  //         cosole.log(res)
-  //         return res
-  //     })
-  //     return {
-  //         socialMediaLink
-  //         };
-  // },
+  async asyncData() {
+    console.log("fire");
+    let getBannerInformation = await GeneralAPI.getGeneralInformation()
+      .then(res => {
+        console.log("fire2");
+        console.log(res);
+        return res;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    return { getBannerInformation };
+  }
 };
 </script>

@@ -7,7 +7,7 @@
     <!-- End Preloader -->
 
     <!-- Banner -->
-    <Banner />
+    <Banner :selected="getBannerInformation" />
     <!-- end Banner -->
 
     <!-- Counter -->
@@ -47,8 +47,9 @@ import Estimate from "../components/Estimate";
 import RegisterOrder from "../components/registerOrderForm";
 import Subscribe from "../components/subscribe";
 import Loader from "../components/loader";
-import generalAPI from "@/API/asyncAPI/generalAPI";
+// import generalAPI from "@/API/asyncAPI/generalAPI";
 // import commentsAPI from '@/API/API/commentsAPI.js'
+import GeneralAPI from "@/API/asyncAPI/generalAPI.js";
 
 export default {
   layout: "dafault",
@@ -62,10 +63,17 @@ export default {
     // })
     // return {Comments}
     // }
+
+    const getBannerInformation = await GeneralAPI.getGeneralInformation()
+      .then(res => {
+        return res.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    return { getBannerInformation: getBannerInformation.data };
   },
-  data() {
-    return {};
-  },
+  data() {},
   components: {
     Banner,
     Loader,
@@ -77,23 +85,23 @@ export default {
     Subscribe
   },
   mounted() {
-    this.getSocialMediaLink();
+    // this.getSocialMediaLink();
     setTimeout(() => {
       document.querySelector(".loader").style.display = "none";
     }, 1000);
   },
   methods: {
     // getSocialMedia Link
-    getSocialMediaLink() {
-      generalAPI
-        .getGeneralInformation()
-        .then(res => {
-          console.log(res);
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    }
+    // getSocialMediaLink() {
+    //   generalAPI
+    //     .getGeneralInformation()
+    //     .then(res => {
+    //       console.log(res);
+    //     })
+    //     .catch(err => {
+    //       console.log(err);
+    //     });
+    // }
   }
 };
 </script>
