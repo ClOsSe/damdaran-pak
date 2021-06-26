@@ -53,7 +53,8 @@ export default {
   plugins: [
     // {src:'@/plugins/after-each.js'}
     { src: "@/plugins/vueCarousel.js", mode: "client" },
-    { src: "@/plugins/vueCookie.js", mode: "client" }
+    { src: "@/plugins/vueCookie.js", mode: "client" },
+    { src: "@/plugins/noty.js", mode: "client" }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
