@@ -1,13 +1,12 @@
-
-import HelperClass from '@/API/global/apiHelperClass'
+import HelperClass from "@/API/global/apiHelperClass";
 class Comments {
-    //store new comment for specific article(base on slug}
-    sendComment(slug,data = null){
-        return HelperClass.postRequest(`/articles/${slug}/comment/store`,data)
-    };
-    //get all comments of the specific articles with their children
-    getAllcomments(slug){
-        return HelperClass.getRequest(`/articles/comments/${slug}`)
-    }
+  //store new comment for specific article(base on slug}
+  sendComment(slug, data = null) {
+    return HelperClass.postRequest(`/articles/${slug}/comment/store`, data);
+  }
+  //get all comments of the specific articles with their children
+  getAllcomments(slug) {
+    return HelperClass.getRequest(`/articles/comments/${slug}`);
+  }
 }
-export default new Comments()
+export default new Comments();
