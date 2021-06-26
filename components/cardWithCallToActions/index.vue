@@ -22,9 +22,6 @@ export default {
     message: {
       requerd: true
     }
-  },
-  mounted() {
-    console.log(this.selected);
   }
 };
 </script>
