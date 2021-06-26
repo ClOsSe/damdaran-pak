@@ -44,15 +44,12 @@
 </template>
 <script>
 import membership from "@/API/API/membership";
-// import HelperClass from '@/API/global/HelperClass'
+import HelperClass from "@/API/global/HelperClass";
 export default {
   data() {
     return {
       email: ""
     };
-  },
-  mounted() {
-    console.log(this.$noty);
   },
   methods: {
     // send email
@@ -62,16 +59,16 @@ export default {
       formdata.append("email", email);
       membership
         .requestToJoinMagazine(formdata)
-        .then(res => {
-          console.log(res);
+        .then(() => {
+          this.$noty.success("ایمیل شما با موفقیت در خبرنامه ثبت شد");
         })
         .catch(error => {
-          error.response
-            ? this.$noty.warning(error.response.data.errors.email)
-            : "";
-          console.log(error.response.data.errors);
+          //   error.response
+          // ? this.$noty.warning(error.response.data.errors.email)
+          // : "";
+          //   console.log(error.response.data.errors);
           e.preventDefault();
-          // HelperClass.showErrors(error,this.$noty)
+          HelperClass.showErrors(error, this.$noty);
         });
     }
   }
