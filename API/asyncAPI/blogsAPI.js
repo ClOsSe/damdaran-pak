@@ -25,8 +25,8 @@ class AboutUs {
     return HelperClass.getRequest(`/categories/${slug}/articles`);
   }
   //increment article visit so call this to increase a hit
-  addNewVisitToArticles(data) {
-    return HelperClass.postRequest(`/article/hit/${data}`);
+  addNewVisitToArticles(id) {
+    return HelperClass.postRequest(`/article/hit/${id}`);
   }
 }
 export default new AboutUs();

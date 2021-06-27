@@ -1,7 +1,7 @@
 import HelperClass from "@/API/global/apiHelperClass";
 class Comments {
   //store new comment for specific article(base on slug}
-  sendComment(slug, data = null) {
+  postUserComment(slug, data = null) {
     return HelperClass.postRequest(`/articles/${slug}/comment/store`, data);
   }
   //get all comments of the specific articles with their children

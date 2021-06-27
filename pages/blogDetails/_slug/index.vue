@@ -42,67 +42,38 @@
                 <ul>
                   <li>
                     <i class="bx bx-user"></i>
-                    توسط: <a href="#">مدیر</a>
+                    توسط: <a href="#">{{ Details.writer }}</a>
                   </li>
                   <li>
                     <i class="bx bx-calendar-alt"></i>
-                    20 دی 1398
+                    {{
+                      new Date(Details.created_at).toLocaleDateString("fa-IR")
+                    }}
                   </li>
                   <li>
                     <i class="bx bx-message-detail"></i>
-                    <a href="#">نظرات (02)</a>
+                    <a v-if="Comments" href="#"
+                      >نظرات ({{ Comments.length }})</a
+                    >
+                    <a v-else href="#">نظرات (0)</a>
                   </li>
                 </ul>
-                <h2>آموزش نحوه رزرو آسان خدمات نظافتی شرکت لیکسی</h2>
-                <p>
-                  لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم
-                  ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به
-                  سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40
-                  سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و
-                  متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت
-                  بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می
-                  گیرد. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.
-                  لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.
-                </p>
-                <p>
-                  لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم
-                  ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به
-                  سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40
-                  سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و
-                  متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت
-                  بوده است. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می
-                  گیرد. لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد.
-                  لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.
-                </p>
-                <blockquote>
-                  "لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم
-                  ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به
-                  سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40
-                  سال استاندارد صنعت بوده است."
-                  <span>جان اسمیت</span>
-                </blockquote>
-                <p>
-                  لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم
-                  ایپسوم به مدت 40 سال استاندارد صنعت بوده است. لورم ایپسوم به
-                  سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40
-                  سال استاندارد صنعت بوده است. لورم ایپسوم به سادگی ساختار چاپ و
-                  متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت
-                  بوده است.
-                </p>
+                <h2>{{ Details.title }}</h2>
+                <p v-html="Details.title"></p>
               </div>
               <!-- comment cart -->
-              <div class="details-comments">
+              <div v-if="Comments" class="details-comments">
                 <h3>نظرات</h3>
                 <CommentCart
                   v-for="item in Comments"
-                  :key="item.name"
+                  :key="item"
                   v-bind="item"
                 />
               </div>
               <!-- end comment cart -->
 
               <div class="details-form">
-                <SendComment />
+                <SendComment :selected="Details.id" />
               </div>
             </div>
           </div>
@@ -131,29 +102,29 @@ import commentsAPI from "@/API/API/commentsAPI";
 import SendComment from "@/components/sendCommentCart";
 
 export default {
-  async asyncData() {
-    // fetch data
-    getAllcomments();
-    getSpecificArticle();
+  // fetch data
+  async asyncData(context) {
     // get one article with slug
-    async function getSpecificArticle(slug) {
-      let Details = await blogsAPI.getSpecificArticle(slug).then(Articel => {
-        return Articel;
+    let Details = await blogsAPI
+      .getSpecificArticle(encodeURIComponent(context.params.slug))
+      .then(Articel => {
+        return Articel.data.data.article;
       });
-      return { Details };
-    }
+
     // get all comments based on slug
-    async function getAllcomments(slug) {
-      let Comments = await commentsAPI
-        .getAllcomments(slug)
-        .then(AllComments => {
-          return AllComments;
-        })
-        .catch(error => {
-          return error;
-        });
-      return { Comments };
-    }
+    let Comments = await commentsAPI
+      .getAllcomments(encodeURIComponent(context.params.slug))
+      .then(AllComments => {
+        let res;
+        if (AllComments.data != "") {
+          res = AllComments.data.data.data;
+          return res;
+        } else {
+          return 0;
+        }
+      });
+
+    // // get all category
     let AllCategories = await blogsAPI
       .getArticleCategoriesLevelOne()
       .then(res => {
@@ -162,14 +133,9 @@ export default {
       .catch(error => {
         console.log(error);
       });
-    return { AllCategories };
+    return { AllCategories, Details, Comments };
   },
-  data() {
-    return {
-      slug: "test",
-      userid: "test"
-    };
-  },
+
   components: {
     Loader,
     Subscribe,
@@ -180,20 +146,16 @@ export default {
   mounted() {
     if (!localStorage.getItem("userVisited")) {
       //  data = id or slug
-      //  this.isUserVisitedBlog(data);
+      this.isUserVisitedBlog(this.Details.id);
     }
     setTimeout(() => {
       document.querySelector(".loader").style.display = "none";
     }, 1000);
   },
   methods: {
-    // isUserVisitedBlog(data){
-    //     blogsAPI.addNewVisitToArticles(data).then((res)=>{
-    //         console.log(res);
-    //     }).catch((err)=>{
-    //         console.log(err)
-    //     })
-    // }
+    isUserVisitedBlog(id) {
+      blogsAPI.addNewVisitToArticles(id).then(() => {});
+    }
   }
 };
 </script>

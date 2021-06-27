@@ -32,7 +32,7 @@
         </div>
         <div class="col-lg-12">
           <button
-            @click.prevent="postUserComment($event, slug)"
+            @click.prevent="postUserComment($event, $route.params.slug)"
             type="submit"
             class="btn cmn-btn"
           >
@@ -50,7 +50,6 @@ import HelperClass from "@/API/global/HelperClass";
 export default {
   data() {
     return {
-      slug: "asdasdas",
       comments: {
         name: "",
         email: "",
@@ -58,6 +57,8 @@ export default {
       }
     };
   },
+  props: ["selected"],
+
   methods: {
     // post user comments
     postUserComment(e, slug) {
@@ -71,8 +72,11 @@ export default {
         formdata.append("name", this.comments.name);
         formdata.append("email", this.comments.email);
         formdata.append("text", this.comments.message);
-        formdata.append("parent", this.slug);
-        formdata.append("user_id", this.userid);
+        formdata.append("article_id", this.selected);
+        // reply comment
+        // formdata.append("parent", id);
+        // user id
+        // formdata.append("user_id", this.userid);
         commentsAPI
           .postUserComment(slug, formdata)
           .then(() => {
