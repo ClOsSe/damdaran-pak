@@ -29,29 +29,43 @@
         </div>
       </div>
     </div>
-  
+
     <!-- End Page Title -->
 
-        <!-- FAQ -->
-        <div class="faq-area ptb-100">
-            <FAQ />
-        </div>
-        <!-- End FAQ -->
+    <!-- FAQ -->
+    <div class="faq-area ptb-100">
+      <FAQ :selected="allFAQ" />
+    </div>
+    <!-- End FAQ -->
 
-        <!-- Subscribe -->
-        <Subscribe />
-        <!-- End Subscribe -->
-
-</div>    
+    <!-- Subscribe -->
+    <Subscribe />
+    <!-- End Subscribe -->
+  </div>
 </template>
 <script>
-import Loader from '@/components/loader'
-import Subscribe from '@/components/subscribe'
-import FAQ from '@/components/faq'
+import Loader from "@/components/loader";
+import Subscribe from "@/components/subscribe";
+import FAQ from "@/components/faq";
+import FAQAPI from "@/API/asyncAPI/faq.js";
+import HelperClass from "@/API/global/HelperClass.js";
 export default {
+  async asyncData() {
+    let allFAQ = await FAQAPI.getFaqs()
+      .then(res => {
+        // console.log(res.data.data);
+        return res.data.data;
+      })
+      .catch(err => {
+        HelperClass.showErrors(err, this.$noty);
+      });
+    return {
+      allFAQ: allFAQ
+    };
+  },
   data() {
     return {
-      activIndex:10
+      activIndex: 10
     };
   },
 
@@ -59,17 +73,16 @@ export default {
     setTimeout(() => {
       document.querySelector(".loader").style.display = "none";
     }, 1000);
-    },
-    components:{
-        Loader,
-        Subscribe,
-        FAQ
-    }
-}
+  },
+  components: {
+    Loader,
+    Subscribe,
+    FAQ
+  }
+};
 </script>
 <style scoped>
-.ggg{
+.ggg {
   display: block !important;
 }
 </style>
-
