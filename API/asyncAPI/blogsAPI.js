@@ -5,8 +5,8 @@ class AboutUs {
     return HelperClass.getRequest(`/get-random-article`);
   }
   //get all articles
-  getAllArticles() {
-    return HelperClass.getRequest(`/get-articles`);
+  getAllArticles(page) {
+    return HelperClass.getRequest(`/get-articles?page=${page}`);
   }
   //get level one articleCategories
   getArticleCategoriesLevelOne() {
@@ -20,9 +20,9 @@ class AboutUs {
   getPopularArticles() {
     return HelperClass.getRequest(`/popular-articles`);
   }
-  //get a category articles
-  getCategoryArticels() {
-    return HelperClass.getRequest(`/categories/{articleCategory}/articles`);
+  //get a category's articles
+  getCategoryArticels(slug) {
+    return HelperClass.getRequest(`/categories/${slug}/articles`);
   }
   //increment article visit so call this to increase a hit
   addNewVisitToArticles(data) {

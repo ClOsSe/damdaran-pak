@@ -1,52 +1,42 @@
 <template>
   <div dir="rtl">
-    <div class="blog-item">
-      <NuxtLink to="/blogDetails">
-        <img src="@/assets/img/home-three/blog1.jpg" alt="Blog" />
+    <div v-if="selected !== undefined" class="blog-item">
+      <NuxtLink :to="`/blogDetails/${encodeURIComponent(selected.slug)}`">
+        <img :src="selected.image_url" alt="Blog" />
       </NuxtLink>
       <div class="blog-bottom">
         <h3>
-          <NuxtLink to="/blogDetails"
-            >آموزش نحوه رزرو آسان خدمات نظافتی شرکت لیکسی</NuxtLink
-          >
+          <NuxtLink :to="`/blogDetails/${encodeURIComponent(selected.slug)}`">{{
+            selected.title
+          }}</NuxtLink>
         </h3>
         <ul>
           <li>
             <span>توسط:</span>
-            <a href="#">مدیر</a>
+            <a>{{ selected.writer }}</a>
           </li>
           <li>
-            <span>20</span>
-            <a href="#">نظرات</a>
+            <span>{{ selected.comments_count }}</span>
+            <a>نظرات</a>
           </li>
           <li>
-            <span>11</span>
-            <a href="#">مشاهده</a>
+            <span>{{ selected.hit }}</span>
+            <a>مشاهده</a>
           </li>
         </ul>
         <p>
-          لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به
-          مدت 40 سال استاندارد صنعت بوده است.
+          {{ selected.short_description }}
         </p>
-        <a href="blog-details.html">
+        <NuxtLink :to="`/blogDetails/${encodeURIComponent(selected.slug)}`">
           بیشتر بخوانید
           <i class="bx bx-left-arrow-alt"></i>
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </div>
 </template>
 <script>
-import blogsAPI from "@/API/asyncAPI/blogsAPI";
-
 export default {
-  async asyncData() {
-    let allBlogs = await blogsAPI.getAllArticles().then(res => {
-      console.log("test");
-      console.log(res);
-      return res;
-    });
-    console.log(allBlogs);
-  }
+  props: ["selected"]
 };
 </script>

@@ -36,25 +36,27 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-lg-4">
-            <BlogPost />
+            <BlogPost
+              v-for="(item, index) in AllArticles"
+              :key="index"
+              :selected="item"
+            />
           </div>
         </div>
         <div class="pagination-area">
           <ul>
             <li>
-              <a href="#">قبلی</a>
+              <a @click="GetPreviousPageNummber()">قبلی</a>
+            </li>
+            <li v-for="value in lastPage" :key="value">
+              <NuxtLink
+                @click.native="GetCurrentPageNummber(value)"
+                :to="`/blog/category/${$route.params.slug}?page=${value}`"
+                >{{ value }}</NuxtLink
+              >
             </li>
             <li>
-              <a href="#">1</a>
-            </li>
-            <li>
-              <a href="#">2</a>
-            </li>
-            <li>
-              <a href="#">3</a>
-            </li>
-            <li>
-              <a href="#">بعدی</a>
+              <a @click="GetNextPageNummber()">بعدی</a>
             </li>
           </ul>
         </div>
@@ -74,29 +76,51 @@ import BlogPost from "@/components/blogPost";
 import blogsAPI from "@/API/asyncAPI/blogsAPI";
 
 export default {
-  async asyncData() {
-    let allArticles = await blogsAPI.getAllArticles().then(res => {
-      return res;
+  async asyncData(context) {
+    let page = context.route.query.page;
+    if (!page) {
+      page = 1;
+    }
+    let getAllArticles = await blogsAPI.getAllArticles(page).then(res => {
+      return res.data.data;
     });
-    return { allArticles };
+    let lastPage = getAllArticles.last_page;
+    let AllArticles = getAllArticles.articles;
+
+    return { lastPage, AllArticles };
   },
+
+  watchQuery: ["page"],
+
   components: {
     Loader,
     Subscribe,
     BlogPost
   },
+  data() {
+    return {
+      currentPage: 1
+    };
+  },
   mounted() {
-    //  this.getRandomBlogs();
     setTimeout(() => {
       document.querySelector(".loader").style.display = "none";
     }, 1000);
   },
   methods: {
-    // getRandomBlogs(){
-    // blogsAPI.getTenRandomArticle().then((res)=>{
-    // console.log(res)
-    // })
-    // }
+    GetCurrentPageNummber(currentPage) {
+      this.currentPage = currentPage;
+    },
+    GetPreviousPageNummber() {
+      this.currentPage === 1 ? "" : (this.currentPage = this.currentPage - 1);
+      this.$router.push(`/blog?page=${this.currentPage}`);
+    },
+    GetNextPageNummber() {
+      this.currentPage === this.lastPage
+        ? ""
+        : (this.currentPage = this.currentPage + 1);
+      this.$router.push(`/blog?page=${this.currentPage}`);
+    }
   }
 };
 </script>

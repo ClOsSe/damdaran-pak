@@ -36,7 +36,11 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-lg-4">
-            <BlogPost />
+            <BlogPost
+              v-for="(item, index) in AllArticles"
+              :key="index"
+              :selected="item"
+            />
           </div>
         </div>
         <div class="pagination-area">
@@ -44,14 +48,11 @@
             <li>
               <a href="#">قبلی</a>
             </li>
-            <li>
-              <a href="#">1</a>
-            </li>
-            <li>
-              <a href="#">2</a>
-            </li>
-            <li>
-              <a href="#">3</a>
+            <li v-for="value in lastPage" :key="value">
+              <NuxtLink
+                :to="`/blog/category/${$route.params.slug}?page=${value}`"
+                >{{ value }}</NuxtLink
+              >
             </li>
             <li>
               <a href="#">بعدی</a>
@@ -74,11 +75,15 @@ import BlogPost from "@/components/blogPost";
 import blogsAPI from "@/API/asyncAPI/blogsAPI";
 
 export default {
-  async asyncData() {
-    let allArticles = await blogsAPI.getAllArticles().then(res => {
-      return res;
-    });
-    return { allArticles };
+  async asyncData(context) {
+    let allArticlesWithSlug = await blogsAPI
+      .getCategoryArticels(context.params.slug)
+      .then(res => {
+        return res.data.data;
+      });
+    let lastPage = allArticlesWithSlug.last_page;
+    let AllArticles = allArticlesWithSlug.articles;
+    return { lastPage, AllArticles };
   },
   components: {
     Loader,
