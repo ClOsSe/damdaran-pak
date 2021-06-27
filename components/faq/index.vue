@@ -9,14 +9,11 @@
               :key="index"
               class="accordion"
             >
-              <li @click="clickfaqItem($event, item.id)">
-                <a id="title" :class="activIndex === item.id ? 'active' : ''">{{
+              <li @click="clickfaqItem(item.id)" class="my-2">
+                <a :class="activIndex === item.id ? 'active' : ''">{{
                   item.title
                 }}</a>
-                <p
-                  id="description"
-                  :class="['p-3', activIndex === item.id ? 'active_p' : '']"
-                >
+                <p :class="['p-3', activIndex === item.id ? 'active_p' : '']">
                   {{ item.description }}
                 </p>
               </li>
@@ -38,7 +35,7 @@ export default {
 
   data() {
     return {
-      activIndex: 0,
+      activIndex: 1,
       tempActiveIndex: ""
     };
   },
@@ -49,36 +46,14 @@ export default {
   },
 
   methods: {
-    clickfaqItem(e, index) {
-      console.log(e.target.attributes);
+    clickfaqItem(index) {
       this.activIndex = index;
-
-      // if (e.target.attributes[3] == "active") {
-      //   console.log("fire");
-      // }
-
-      // let title = document.querySelector("#title");
-      // let description = document.querySelector("#description");
-
-      // title.classList.contains("active")
-      //   ? title.classList.remove("active")
-      //   : "";
-
-      // description.classList.contains("active_p")
-      //   ? description.classList.remove("active_p")
-      //   : description.classList.add("display-none");
     }
   }
 };
 </script>
 <style scoped>
 .active_p {
-  display: block !important;
-}
-.display-none {
-  display: none !important;
-}
-.display-block {
   display: block !important;
 }
 </style>
