@@ -10,32 +10,8 @@
     <PageTitleArea selected="در باره ما" />
     <!-- End Page Title -->
 
-    <!-- Choose -->
-    <!-- <div class="choose-area two pt-100 pb-70">
-      <div class="choose-shape">
-        <img src="@/assets/img/home-one/choose1.png" alt="Shape" />
-        <img src="@/assets/img/home-one/banner-shape3.png" alt="Shape" />
-      </div>
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="choose-content">
-              <div class="about-img">
-                <img src="@/assets/img/home-two/choose1.jpg" alt="Choose" />
-                <img src="@/assets/img/home-two/choose2.jpg" alt="Choose" />
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <AboutUs :selected="getBannerInformation.about_us" />
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- End Choose -->
-
     <!--  aboutUs content -->
-    <section v-html="getBannerInformation.about_us"></section>
+    <section v-html="getBannerInformation"></section>
     <!-- end aboutUs content -->
 
     <!-- Counter -->
@@ -130,26 +106,17 @@
 <script>
 import PageTitleArea from "@/components/PageTitleArea";
 import Loader from "@/components/loader";
-// import AboutUs from "@/components/cardWithCallToActions";
 import Counter from "@/components/counter";
 import Subscribe from "@/components/subscribe";
-import GeneralAPI from "@/API/asyncAPI/generalAPI.js";
 
 export default {
-  async asyncData() {
-    let getBannerInformation = await GeneralAPI.getGeneralInformation()
-      .then(res => {
-        return res.data.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  async asyncData(context) {
+    let getBannerInformation = context.store.state.AllSetting.data.about_us;
     return { getBannerInformation };
   },
   components: {
     PageTitleArea,
     Loader,
-    // AboutUs,
     Counter,
     Subscribe
   },

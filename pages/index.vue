@@ -50,10 +50,11 @@ import getCommentsForSlider from "@/API/asyncAPI/slider.js";
 
 export default {
   layout: "dafault",
-  async asyncData() {
+  async asyncData(context) {
     // slider
     let getBannerInformation = await GeneralAPI.getGeneralInformation()
       .then(res => {
+        context.store.dispatch("getAllSetting", res.data);
         return res.data;
       })
       .catch(error => {

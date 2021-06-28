@@ -1,5 +1,5 @@
-export default{
-    // getSomeThings(state){
-    //     return state;
-    // }
-}
+export default {
+  getAllSetting(state, data) {
+    state.AllSetting = data;
+  }
+};
