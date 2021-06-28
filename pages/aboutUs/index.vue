@@ -11,7 +11,7 @@
     <!-- End Page Title -->
 
     <!-- Choose -->
-    <div class="choose-area two pt-100 pb-70">
+    <!-- <div class="choose-area two pt-100 pb-70">
       <div class="choose-shape">
         <img src="@/assets/img/home-one/choose1.png" alt="Shape" />
         <img src="@/assets/img/home-one/banner-shape3.png" alt="Shape" />
@@ -27,19 +27,23 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <AboutUs />
+            <AboutUs :selected="getBannerInformation.about_us" />
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- End Choose -->
+
+    <!--  aboutUs content -->
+    <section v-html="getBannerInformation.about_us"></section>
+    <!-- end aboutUs content -->
 
     <!-- Counter -->
     <Counter />
     <!-- End Counter -->
 
     <!-- Watch -->
-    <section class="watch-area ptb-100">
+    <!-- <section class="watch-area ptb-100">
       <div class="container">
         <div class="section-title">
           <h2>برای آشنایی بیشتر با ما ، ویدیو را مشاهده کنید</h2>
@@ -66,11 +70,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- End Watch -->
 
     <!-- Love -->
-    <section class="love-area pb-100">
+    <!-- <section class="love-area pb-100">
       <div class="container">
         <div class="love-item">
           <div class="section-title" style="text-align:right">
@@ -115,7 +119,7 @@
           </ul>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- End Love -->
 
     <!-- Subscribe -->
@@ -126,26 +130,26 @@
 <script>
 import PageTitleArea from "@/components/PageTitleArea";
 import Loader from "@/components/loader";
-import AboutUs from "@/components/cardWithCallToActions";
+// import AboutUs from "@/components/cardWithCallToActions";
 import Counter from "@/components/counter";
 import Subscribe from "@/components/subscribe";
-// import aboutUsAPI from '@/API/asyncAPI/aboutUsAPI'
+import GeneralAPI from "@/API/asyncAPI/generalAPI.js";
 
 export default {
-  // async asyncData(){
-
-  // actions.dispatch('getAboutUs').then(data=>console.log(data))
-  // let aboutUs  = await aboutUsAPI.getSettingInformation((res)=>{
-  // return res
-  // })
-  // return {aboutUs};
-  // async => (.js (address))=>
-  // not async
-  // },
+  async asyncData() {
+    let getBannerInformation = await GeneralAPI.getGeneralInformation()
+      .then(res => {
+        return res.data.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    return { getBannerInformation };
+  },
   components: {
     PageTitleArea,
     Loader,
-    AboutUs,
+    // AboutUs,
     Counter,
     Subscribe
   },

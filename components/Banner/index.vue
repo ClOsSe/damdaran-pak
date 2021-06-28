@@ -32,10 +32,7 @@
 </template>
 <script>
 export default {
-  props: ["selected"],
-  created() {
-    console.log("this is selected", this.selected);
-  }
+  props: ["selected"]
 };
 </script>
 <style scoped></style>
