@@ -18,6 +18,7 @@
                 <img src="@/assets/img/error-shape2.png" alt="Shape" />
                 <img src="@/assets/img/error-shape3.png" alt="Shape" />
               </div>
+              <h1>404</h1>
               <p>صفحه یافت نشد</p>
             </div>
           </div>

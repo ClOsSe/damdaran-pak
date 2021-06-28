@@ -20,7 +20,7 @@
         <div class="d-table-cell">
           <div class="container">
             <div class="banner-text">
-              <h1 v-html="selected.contact_us"></h1>
+              <h1 v-html="selected.about_us"></h1>
               <!-- <a class="cmn-btn" href="#">ارتباط با ما</a> -->
             </div>
           </div>
@@ -32,7 +32,10 @@
 </template>
 <script>
 export default {
-  props: ["selected"]
+  props: ["selected"],
+  created() {
+    console.log("this is selected", this.selected);
+  }
 };
 </script>
 <style scoped></style>

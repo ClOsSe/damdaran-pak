@@ -7,29 +7,7 @@
     <!-- End Preloader -->
 
     <!-- Page Title -->
-    <div class="page-title-area">
-      <div class="d-table">
-        <div class="d-table-cell">
-          <div class="container">
-            <div class="title-item">
-              <h2>سوالات متداول</h2>
-              <ul>
-                <li>
-                  <NuxtLink to="/">صفحه اصلی</NuxtLink>
-                </li>
-                <li>
-                  <i class="bx bx-chevrons-left"></i>
-                </li>
-                <li>
-                  <span>سوالات متداول</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <PageTitleArea selected="سوالات متداول" />
     <!-- End Page Title -->
 
     <!-- FAQ -->
@@ -49,6 +27,8 @@ import Subscribe from "@/components/subscribe";
 import FAQ from "@/components/faq";
 import FAQAPI from "@/API/asyncAPI/faq.js";
 import HelperClass from "@/API/global/HelperClass.js";
+import PageTitleArea from "@/components/PageTitleArea";
+
 export default {
   async asyncData() {
     let allFAQ = await FAQAPI.getFaqs()
@@ -75,6 +55,7 @@ export default {
     }, 1000);
   },
   components: {
+    PageTitleArea,
     Loader,
     Subscribe,
     FAQ

@@ -7,28 +7,7 @@
     <!-- End Preloader -->
 
     <!-- Page Title -->
-    <div class="page-title-area">
-      <div class="d-table">
-        <div class="d-table-cell">
-          <div class="container">
-            <div class="title-item">
-              <h2>وبلاگ</h2>
-              <ul>
-                <li>
-                  <NuxtLink to="/">صفحه اصلی</NuxtLink>
-                </li>
-                <li>
-                  <i class="bx bx-chevrons-left"></i>
-                </li>
-                <li>
-                  <span>وبلاگ</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <PageTitleArea selected="وبلاگ" />
     <!-- End Page Title -->
 
     <!-- Blog -->
@@ -74,6 +53,7 @@ import Loader from "@/components/loader";
 import Subscribe from "@/components/subscribe";
 import BlogPost from "@/components/blogPost";
 import blogsAPI from "@/API/asyncAPI/blogsAPI";
+import PageTitleArea from "@/components/PageTitleArea";
 
 export default {
   async asyncData(context) {
@@ -94,6 +74,7 @@ export default {
 
   components: {
     Loader,
+    PageTitleArea,
     Subscribe,
     BlogPost
   },

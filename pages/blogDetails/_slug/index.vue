@@ -7,28 +7,7 @@
     <!-- End Preloader -->
 
     <!-- Page Title -->
-    <div class="page-title-area">
-      <div class="d-table">
-        <div class="d-table-cell">
-          <div class="container">
-            <div class="title-item">
-              <h2>جزئیات وبلاگ</h2>
-              <ul>
-                <li>
-                  <NuxtLink to="/">صفحه اصلی</NuxtLink>
-                </li>
-                <li>
-                  <i class="bx bx-chevrons-left"></i>
-                </li>
-                <li>
-                  <span>جزئیات وبلاگ</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <PageTitleArea :selected="$route.params.slug" />
     <!-- End Page Title -->
 
     <!-- Blog Details -->
@@ -135,7 +114,6 @@ export default {
       });
     return { AllCategories, Details, Comments };
   },
-
   components: {
     Loader,
     Subscribe,
