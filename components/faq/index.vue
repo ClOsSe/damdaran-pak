@@ -40,9 +40,9 @@ export default {
     };
   },
   mounted() {
-    setTimeout(() => {
-      document.querySelector(".loader").style.display = "none";
-    }, 1000);
+    // setTimeout(() => {
+    // document.querySelector(".loader").style.display = "none";
+    // }, 1000);
   },
 
   methods: {
