@@ -21,8 +21,8 @@
               ]"
             >
               <slide
-                v-for="person in selected"
-                :key="person.name"
+                v-for="(item, index) in selected"
+                :key="index"
                 data-index="3"
                 data-name="MySlideName"
               >
@@ -31,9 +31,9 @@
                     <div
                       class="d-flex align-items-center flex-column p-3 content"
                     >
-                      <img :src="person.avatar" alt="Review" />
-                      <h4>{{ person.name }}</h4>
-                      <p>{{ person.text }}</p>
+                      <img :src="item.image_url" alt="Review" />
+                      <h4>{{ item.title }}</h4>
+                      <p>{{ item.sub_title }}</p>
                     </div>
                   </div>
                 </div>
@@ -47,10 +47,7 @@
 </template>
 <script>
 export default {
-  props: ["selected"],
-  data() {
-    return {};
-  }
+  props: ["selected"]
 };
 </script>
 <style scoped>

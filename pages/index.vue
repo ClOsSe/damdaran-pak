@@ -27,9 +27,7 @@
     <!-- End Review -->
 
     <!-- Estimate -->
-    <!-- <Estimate v-show="Comments" -->
-    <!-- :selected="Comments" -->
-    <!-- /> -->
+    <Estimate :selected="sliderCommetns" />
     <!-- End Estimate -->
 
     <!-- Subscribe -->
@@ -48,22 +46,28 @@ import RegisterOrder from "../components/registerOrderForm";
 import Subscribe from "../components/subscribe";
 import Loader from "../components/loader";
 import GeneralAPI from "@/API/asyncAPI/generalAPI.js";
+import getCommentsForSlider from "@/API/asyncAPI/slider.js";
 
 export default {
   layout: "dafault",
   async asyncData() {
     // slider
-
-    const getBannerInformation = await GeneralAPI.getGeneralInformation()
+    let getBannerInformation = await GeneralAPI.getGeneralInformation()
       .then(res => {
         return res.data;
       })
       .catch(error => {
         console.log(error);
       });
-    return { getBannerInformation: getBannerInformation.data };
+
+    let sliderCommetns = await getCommentsForSlider
+      .getCommentsForSlider()
+      .then(res => {
+        return res.data.data;
+      });
+    return { getBannerInformation: getBannerInformation.data, sliderCommetns };
   },
-  data() {},
+
   components: {
     Banner,
     Loader,
