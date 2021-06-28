@@ -22,7 +22,7 @@
         </div>
         <div class="col-lg-6">
           <div class="faq-img">
-            <img src="/NEWIMAGES/faq.jpg" alt="FAQ" />
+            <!-- <img src="/NEWIMAGES/faq.jpg" alt="FAQ" /> -->
           </div>
         </div>
       </div>
