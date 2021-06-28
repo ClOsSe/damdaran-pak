@@ -12,9 +12,15 @@
       <div class="main-nav">
         <div class="container">
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.html">
-              <img src="@/assets/img/logo.png" alt="Logo" />
-            </a>
+            <NuxtLink class="navbar-brand" to="/">
+              <img
+                style="max-width:135px; max-height:50px "
+                :src="
+                  `${$store.state.imageBaseUrl}/storage/settings/logo/${$store.state.AllSetting.data.logo_image}`
+                "
+                alt="Logo"
+              />
+            </NuxtLink>
 
             <button class=" menuButton d-lg-none" @click="sideBarShow()">
               <div>
@@ -62,12 +68,14 @@
             <div class="side-nav">
               <div class="cta-call">
                 <a
+                  style="padding:0 !important; background:none !important;"
                   class="p-0 bg-none"
                   :href="$store.state.AllSetting.data.instagram"
                 >
                   <i class="bx bxl-instagram"></i>
                 </a>
                 <a
+                  style="padding:0 !important; background:none !important;"
                   class="p-0 bg-none"
                   :href="$store.state.AllSetting.data.whatsapp"
                 >
