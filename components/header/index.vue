@@ -61,8 +61,18 @@
             </div>
             <div class="side-nav">
               <div class="cta-call">
-                <i class="bx bxl-instagram"></i>
-                <i class="bx bxl-whatsapp"></i>
+                <a
+                  class="p-0 bg-none"
+                  :href="$store.state.AllSetting.data.instagram"
+                >
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a
+                  class="p-0 bg-none"
+                  :href="$store.state.AllSetting.data.whatsapp"
+                >
+                  <i class="bx bxl-whatsapp"></i>
+                </a>
               </div>
             </div>
           </nav>
@@ -107,9 +117,6 @@ export default {
     return {
       sideBar: true
     };
-  },
-  mounted() {
-    this.sideBar = true;
   },
   methods: {
     sideBarShow() {
