@@ -2,19 +2,28 @@
   <div>
     <div class="navbar-area fixed-top">
       <!-- Menu For Mobile Device -->
-      <div class="mobile-nav">
-        <a href="index.html" class="logo">
-          <img src="@/assets/img/logo.png" alt="Logo" />
-        </a>
-      </div>
+      <!-- <div class="mobile-nav">
+                <a href="index.html" class="logo">
+                    <img src="@/assets/img/logo.png" alt="Logo">
+                </a>
+            </div> -->
 
       <!-- Menu For Desktop Device -->
       <div class="main-nav">
         <div class="container">
-          <nav class="navbar navbar-expand-md navbar-light">
+          <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="index.html">
               <img src="@/assets/img/logo.png" alt="Logo" />
             </a>
+
+            <button class=" menuButton d-lg-none" @click="sideBarShow()">
+              <div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+            </button>
+
             <div
               class="collapse navbar-collapse mean-menu"
               id="navbarSupportedContent"
@@ -49,19 +58,112 @@
                   <NuxtLink to="/faq" class="nav-link">سوالات متداول</NuxtLink>
                 </li>
               </ul>
-              <div class="side-nav">
-                <div class="cta-call">
-                  <i class="bx bxl-instagram"></i>
-                  <i class="bx bxl-whatsapp"></i>
-                </div>
+            </div>
+            <div class="side-nav">
+              <div class="cta-call">
+                <i class="bx bxl-instagram"></i>
+                <i class="bx bxl-whatsapp"></i>
               </div>
             </div>
           </nav>
         </div>
       </div>
     </div>
+    <div class="mobile_menu d-lg-none showMenuSide">
+      <ul class="d-flex flex-column list-unstyled ">
+        <li class="nav-item">
+          <NuxtLink to="/" class="nav-link dropdown-toggle active"
+            >خانه
+          </NuxtLink>
+        </li>
+        <li class="nav-item">
+          <NuxtLink to="/registerOrder" class="nav-link dropdown-toggle "
+            >ثبت سفارش
+          </NuxtLink>
+        </li>
+
+        <li class="nav-item">
+          <NuxtLink to="/aboutUs" class="nav-link">درباره ما</NuxtLink>
+        </li>
+
+        <li class="nav-item">
+          <NuxtLink to="/blog" class="nav-link dropdown-toggle"
+            >وبلاگ
+          </NuxtLink>
+        </li>
+        <li class="nav-item">
+          <NuxtLink to="/contact" class="nav-link">تماس با ما</NuxtLink>
+        </li>
+        <li class="nav-item">
+          <NuxtLink to="/faq" class="nav-link">سوالات متداول</NuxtLink>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      sideBar: true
+    };
+  },
+  mounted() {
+    this.sideBar = true;
+  },
+  methods: {
+    sideBarShow() {
+      if (this.sideBar == false) {
+        document.querySelector(".mobile_menu").style.right = "-75vw";
+      } else {
+        document.querySelector(".mobile_menu").style.right = "0";
+      }
+      this.sideBar = !this.sideBar;
+    }
+  }
+};
 </script>
+<style scoped>
+.mobile_menu {
+  position: fixed;
+  top: 70px;
+  height: 100vh;
+  width: 70vw;
+  background-color: #172f47;
+  z-index: 100;
+  transition: all 0.3s ease-in;
+}
+.mobile_menu ul {
+  padding: 30px 0 0 0;
+}
+.showMenuSide {
+  right: -75vw;
+}
+.menuButton {
+  border: none;
+  /* box-shadow: 0px 0px 3px #8a9097; */
+  background: bottom;
+  width: 45px;
+  height: 50px;
+}
+
+.menuButton .line {
+  color: white;
+  width: 100%;
+  margin: 8px;
+  height: 2px;
+  background-color: white;
+}
+.nav-link {
+  color: azure !important;
+}
+.nav-item :hover {
+  color: rgb(200, 198, 198) !important;
+}
+.side-nav .cta-call {
+  display: flex;
+}
+.side-nav i {
+  margin: 5px;
+}
+</style>
