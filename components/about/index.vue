@@ -8,15 +8,19 @@
           </div>
           <div class="col-lg-6">
             <div class="about-img">
-              <img src="@/assets/img/home-one/about-bg.jpg" alt="About" />
-              <div class="video-wrap">
-                <a
+              <img
+                style="display:block"
+                src="\NEWIMAGES\about-us.jpg"
+                alt="About"
+              />
+              <!-- <div class="video-wrap"> -->
+              <!-- <a
                   href="https://www.youtube.com/watch?v=Dviu-D3Fijo"
                   class="popup-youtube"
                 >
                   <i class="bx bx-play"></i>
-                </a>
-              </div>
+                </a> -->
+              <!-- </div> -->
             </div>
           </div>
         </div>
