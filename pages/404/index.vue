@@ -28,43 +28,17 @@
     <!-- End Error -->
 
     <!-- Subscribe -->
-    <div class="subscribe-area">
-      <div class="subscribe-wrap">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <div class="section-title">
-                <h2>در خبرنامه ما عضو شوید</h2>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <form class="newsletter-form" data-toggle="validator">
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="آدرس ایمیل شما"
-                  name="EMAIL"
-                  required
-                  autocomplete="off"
-                />
-
-                <button class="btn cmn-btn" type="submit">
-                  مشترک شدن
-                </button>
-                <div id="validator-newsletter" class="form-result"></div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Subscribe />
+    <!-- end Subscribe -->
   </div>
 </template>
 <script>
 import Loader from "@/components/loader";
+import Subscribe from "@/components/subscribe";
 export default {
   components: {
-    Loader
+    Loader,
+    Subscribe
   },
   mounted() {
     setTimeout(() => {
