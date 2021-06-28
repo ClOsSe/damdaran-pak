@@ -1,14 +1,7 @@
 <template>
   <div>
     <div class="widget-area">
-      <div class="search widget-item">
-        <!-- <form>
-          <input type="text" class="form-control" placeholder="جستجو..." />
-          <button type="submit" class="btn">
-            <i class="bx bx-search"></i>
-          </button>
-        </form> -->
-      </div>
+      <div class="search widget-item"></div>
       <div class="cat widget-item">
         <h3>دسته بندی ها</h3>
         <ul v-for="(item, index) in selected" :key="index">
@@ -85,7 +78,9 @@
       </div>
       <div class="call widget-item">
         <h3>تماس بگیرید</h3>
-        <a href="tel:021-12345678">021-12345678</a>
+        <a :href="'tel:' + $store.state.AllSetting.data.cell">{{
+          $store.state.AllSetting.data.cell
+        }}</a>
       </div>
     </div>
   </div>
@@ -100,9 +95,6 @@ export default {
     return {
       email: ""
     };
-  },
-  mounted() {
-    // console.log(this.selected);
   },
   methods: {
     subscribe(e, email) {
