@@ -12,7 +12,7 @@
 
     <!-- Location -->
     <div class="location-area pt-100 pb-70">
-      <Location />
+      <LocationCard />
     </div>
     <!-- End Location -->
 
@@ -37,17 +37,17 @@
 </template>
 <script>
 import Loader from "@/components/loader";
-import Location from "@/components/locationCard";
+import LocationCard from "@/components/locationCard";
 import ContactForm from "@/components/contactForm";
 import Map from "@/components/map";
 import Subscribe from "@/components/subscribe";
-import PageTitleArea from "@/components/PageTitleArea";
+import PageTitleArea from "@/components/pageTitleArea";
 
 export default {
   components: {
     PageTitleArea,
     Loader,
-    Location,
+    LocationCard,
     ContactForm,
     Map,
     Subscribe

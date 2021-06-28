@@ -27,7 +27,7 @@ import Subscribe from "@/components/subscribe";
 import FAQ from "@/components/faq";
 import FAQAPI from "@/API/asyncAPI/faq.js";
 import HelperClass from "@/API/global/HelperClass.js";
-import PageTitleArea from "@/components/PageTitleArea";
+import PageTitleArea from "@/components/pageTitleArea";
 
 export default {
   async asyncData() {

@@ -22,7 +22,7 @@
 import Loader from "@/components/loader";
 import RegisterOrderForm from "@/components/registerOrderForm";
 import Subscribe from "@/components/subscribe";
-import PageTitleArea from "@/components/PageTitleArea";
+import PageTitleArea from "@/components/pageTitleArea";
 
 export default {
   components: {

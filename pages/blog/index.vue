@@ -53,7 +53,7 @@ import Loader from "@/components/loader";
 import Subscribe from "@/components/subscribe";
 import BlogPost from "@/components/blogPost";
 import blogsAPI from "@/API/asyncAPI/blogsAPI";
-import PageTitleArea from "@/components/PageTitleArea";
+import PageTitleArea from "@/components/pageTitleArea";
 
 export default {
   async asyncData(context) {

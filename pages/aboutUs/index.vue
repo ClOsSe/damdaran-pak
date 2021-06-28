@@ -104,7 +104,7 @@
   </div>
 </template>
 <script>
-import PageTitleArea from "@/components/PageTitleArea";
+import PageTitleArea from "@/components/pageTitleArea";
 import Loader from "@/components/loader";
 import Counter from "@/components/counter";
 import Subscribe from "@/components/subscribe";
