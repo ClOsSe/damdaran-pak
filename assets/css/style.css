@@ -696,7 +696,7 @@ button:focus {
   margin-bottom: 30px;
 }
 .about-area .about-img {
-  background-image: url(../img/home-one/about-bg.jpg);
+  background-image: url(../NEWIMAGES/about-us.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -863,7 +863,7 @@ button:focus {
   color: #fdb139;
 }
 .estimate-area {
-  background-image: url(../NEWIMAGES/DSC01405.jpg);
+  background-image: url(../NEWIMAGES/registerOorderForm.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1537,7 +1537,7 @@ footer {
   margin-bottom: 0;
 }
 .faq-area .faq-img {
-  background-image: url(../img/home-two/faq.jpg);
+  background-image: url(../NEWIMAGES/faq.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

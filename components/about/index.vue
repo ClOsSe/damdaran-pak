@@ -8,11 +8,7 @@
           </div>
           <div class="col-lg-6">
             <div class="about-img">
-              <img
-                style="display:block"
-                src="\NEWIMAGES\about-us.jpg"
-                alt="About"
-              />
+              <img src="\NEWIMAGES\about-us.jpg" alt="About" />
               <!-- <div class="video-wrap"> -->
               <!-- <a
                   href="https://www.youtube.com/watch?v=Dviu-D3Fijo"
