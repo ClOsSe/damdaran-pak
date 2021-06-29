@@ -4,8 +4,8 @@
     <div class="banner-area">
       <div class="banner-shape">
         <img
-          style="right:auto !important;"
-          src="@/assets/img/home-one/banner-main.png"
+          style="right:auto !important;max-width:700px;left:6%"
+          src="@/assets/NEWIMAGES/Banner.png"
           alt="Banner"
         />
 
@@ -20,7 +20,8 @@
         <div class="d-table-cell">
           <div class="container">
             <div class="banner-text">
-              <h1 v-html="selected.about_us"></h1>
+              <h1>{{ selected.titr }}</h1>
+              <p>{{ selected.description }}</p>
               <!-- <a class="cmn-btn" href="#">ارتباط با ما</a> -->
             </div>
           </div>

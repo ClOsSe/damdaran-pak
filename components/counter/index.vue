@@ -8,7 +8,7 @@
             <div class="col-6 col-sm-6 col-lg-3">
               <div class="counter-item">
                 <h3>
-                  <span class="odometer" data-count="5">00</span>
+                  <span class="odometer" data-count="15">00</span>
                 </h3>
                 <p>سال تجربه</p>
               </div>
@@ -16,7 +16,7 @@
             <div class="col-6 col-sm-6 col-lg-3">
               <div class="counter-item">
                 <h3>
-                  <span class="odometer" data-count="98">00</span>
+                  <span class="odometer" data-count="150">00</span>
                 </h3>
                 <p>رضایت مشتری</p>
               </div>
@@ -24,17 +24,17 @@
             <div class="col-6 col-sm-6 col-lg-3">
               <div class="counter-item">
                 <h3>
-                  <span class="odometer" data-count="149">00</span>
+                  <span class="odometer" data-count="749">00</span>
                 </h3>
-                <p>پروژه تکمیل شده</p>
+                <p>تعداد گوسفند فروخته شده</p>
               </div>
             </div>
             <div class="col-6 col-sm-6 col-lg-3">
               <div class="counter-item">
                 <h3>
-                  <span class="odometer" data-count="23">00</span>
+                  <span class="odometer" data-count="24">00</span>
                 </h3>
-                <p>پروژه فعال</p>
+                <p>ساعت پاسخگویی</p>
               </div>
             </div>
           </div>

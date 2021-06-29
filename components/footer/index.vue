@@ -15,7 +15,10 @@
                     alt="Logo"
                   />
                 </NuxtLink>
-                <p v-html="$store.state.AllSetting.data.about_us"></p>
+                <p
+                  style="text-align:justify; max-width:280px"
+                  v-html="$store.state.AllSetting.data.about_us"
+                ></p>
               </div>
             </div>
           </div>

@@ -7,7 +7,8 @@
     <!-- End Preloader -->
 
     <!-- Banner -->
-    <Banner :selected="getBannerInformation" />
+    <!-- <Banner :selected="getBannerInformation" /> -->
+    <Banner :selected="Banner" />
     <!-- end Banner -->
 
     <!-- Counter -->
@@ -68,7 +69,15 @@ export default {
       });
     return { getBannerInformation: getBannerInformation.data, sliderCommetns };
   },
-
+  data() {
+    return {
+      Banner: {
+        titr: "دام سبز",
+        description:
+          "دامداری دام سبز، با 15 سال سابقه‌ی کار در زمینه‌ی توزیع انواع دام‌های گوشتی، از جمله  گوسفند، گوساله، خروس و دیگر دام‌ها فعالیت می‌کند. افتخار ما این است که در تمام  سال‌های فعالیت، دام‌های ارگانیک و با کیفیت به مشتریان عزیزمان عرضه کرده‌ایم"
+      }
+    };
+  },
   components: {
     Banner,
     Loader,
