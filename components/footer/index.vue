@@ -111,12 +111,8 @@
         </div>
         <div class="copyright-area">
           <p>
-            کپی رایت 1400 © تمام حقوق قالب محفوظ است. طراحی توسط
-            <a
-              href="https://www.rtl-theme.com/author/barat/?aff=barat"
-              target="_blank"
-              >Barat Hadian</a
-            >
+            طراحی و توسعه سایت توسط سلطان وب
+            <a href="www.soltanweb.com" target="_blank">www.soltanweb.com</a>
           </p>
         </div>
       </div>
