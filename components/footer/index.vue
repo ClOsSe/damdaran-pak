@@ -28,16 +28,14 @@
                 <h3>شرکت</h3>
                 <ul>
                   <li>
-                    <NuxtLink to="/aboutUs" target="_blank">درباره ما</NuxtLink>
+                    <NuxtLink to="/aboutUs">درباره ما</NuxtLink>
                   </li>
 
                   <li>
-                    <NuxtLink to="/registerOrder" target="_blank"
-                      >ثبت سفارش</NuxtLink
-                    >
+                    <NuxtLink to="/registerOrder">ثبت سفارش</NuxtLink>
                   </li>
                   <li>
-                    <NuxtLink to="/blog" target="_blank">وبلاگ</NuxtLink>
+                    <NuxtLink to="/blog">وبلاگ</NuxtLink>
                   </li>
                 </ul>
               </div>
