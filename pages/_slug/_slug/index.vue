@@ -116,19 +116,13 @@ export default {
   },
   head() {
     return {
-      title: this.pageTitle,
+      title: this.Details.slug,
       meta: [
         {
           name: "Description",
-          content: this.pageDescription
+          content: this.Details.meta
         }
       ]
-    };
-  },
-  data() {
-    return {
-      pageTitle: "",
-      pageDescription: ""
     };
   },
   components: {
