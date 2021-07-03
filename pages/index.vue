@@ -69,8 +69,22 @@ export default {
       });
     return { getBannerInformation: getBannerInformation.data, sliderCommetns };
   },
+  head() {
+    return {
+      title: this.pageTitle,
+      meta: [
+        {
+          name: "Description",
+          content: this.pageDescription
+        }
+      ]
+    };
+  },
   data() {
     return {
+      pageTitle: "فروش گوسفند زنده| دام زنده| دام سبز",
+      pageDescription:
+        "فروش گوسفند زنده باکیفیت. فروش انواع دام‌های گوشتی باکیفیت و ارگانیک، ارسال به سراسر تهران و کرج همراه با اعزام قصاب. ",
       Banner: {
         titr: "دام سبز",
         description:
