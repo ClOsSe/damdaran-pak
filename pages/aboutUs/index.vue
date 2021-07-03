@@ -114,6 +114,24 @@ export default {
     let getBannerInformation = context.store.state.AllSetting.data.about_us;
     return { getBannerInformation };
   },
+  data() {
+    return {
+      pageTitle: "خرید گوسفند زنده آنلاین| دام سبز| درباره‌ی ما",
+      pageDescription:
+        "خرید گوسفند زنده، بابالاترین کیفیت به صورت مجازی! گروه دامداری دام سبز."
+    };
+  },
+  head() {
+    return {
+      title: this.pageTitle,
+      meta: [
+        {
+          name: "Description",
+          content: this.pageDescription
+        }
+      ]
+    };
+  },
   components: {
     PageTitleArea,
     Loader,
