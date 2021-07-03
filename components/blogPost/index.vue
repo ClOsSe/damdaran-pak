@@ -1,14 +1,25 @@
 <template>
   <div dir="rtl">
     <div v-if="selected !== undefined" class="blog-item">
-      <NuxtLink :to="`/blogDetails/${encodeURIComponent(selected.slug)}`">
+      <NuxtLink
+        :to="
+          `/${encodeURIComponent(selected.category.slug)}/${encodeURIComponent(
+            selected.slug
+          )}`
+        "
+      >
         <img :src="selected.image_url" alt="Blog" />
       </NuxtLink>
       <div class="blog-bottom">
         <h3>
-          <NuxtLink :to="`/blogDetails/${encodeURIComponent(selected.slug)}`">{{
-            selected.title
-          }}</NuxtLink>
+          <NuxtLink
+            :to="
+              `/${encodeURIComponent(
+                selected.category.slug
+              )}/${encodeURIComponent(selected.slug)}`
+            "
+            >{{ selected.title }}</NuxtLink
+          >
         </h3>
         <ul>
           <li>
@@ -27,7 +38,13 @@
         <p>
           {{ selected.short_description }}
         </p>
-        <NuxtLink :to="`/blogDetails/${encodeURIComponent(selected.slug)}`">
+        <NuxtLink
+          :to="
+            `/${encodeURIComponent(
+              selected.category.slug
+            )}/${encodeURIComponent(selected.slug)}`
+          "
+        >
           بیشتر بخوانید
           <i class="bx bx-left-arrow-alt"></i>
         </NuxtLink>
@@ -37,6 +54,9 @@
 </template>
 <script>
 export default {
-  props: ["selected"]
+  props: ["selected"],
+  mounted() {
+    console.log(this.selected);
+  }
 };
 </script>

@@ -30,7 +30,7 @@
             <li v-for="value in lastPage" :key="value">
               <NuxtLink
                 @click.native="GetCurrentPageNummber(value)"
-                :to="`/blog/category/${$route.params.slug}?page=${value}`"
+                :to="`/blog/${$route.params.slug}?page=${value}`"
                 >{{ value }}</NuxtLink
               >
             </li>
