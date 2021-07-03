@@ -44,6 +44,24 @@ export default {
     setTimeout(() => {
       document.querySelector(".loader").style.display = "none";
     }, 1000);
+  },
+  data() {
+    return {
+      pageTitle: "404| صفحه در درسترس نیست| دام سبز",
+      pageDescription:
+        "دام زنده‌ای در این صفحه موجود نیست! برای خرید دام زنده به صفحه‌ی اصلی مراجعه کنید. "
+    };
+  },
+  head() {
+    return {
+      title: this.pageTitle,
+      meta: [
+        {
+          name: "Description",
+          content: this.pageDescription
+        }
+      ]
+    };
   }
 };
 </script>
