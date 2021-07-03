@@ -112,7 +112,6 @@ export default {
       .catch(error => {
         console.log(error);
       });
-    console.log(Details);
     return { AllCategories, Details, Comments };
   },
   head() {
