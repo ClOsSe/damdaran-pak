@@ -38,7 +38,7 @@
                   </li>
                 </ul>
                 <h2>{{ Details.title }}</h2>
-                <p v-html="Details.title"></p>
+                <p style="overflow:hidden" v-html="Details.title"></p>
               </div>
               <!-- comment cart -->
               <div v-if="Comments" class="details-comments">
@@ -113,6 +113,23 @@ export default {
         console.log(error);
       });
     return { AllCategories, Details, Comments };
+  },
+  head() {
+    return {
+      title: this.pageTitle,
+      meta: [
+        {
+          name: "Description",
+          content: this.pageDescription
+        }
+      ]
+    };
+  },
+  data() {
+    return {
+      pageTitle: "",
+      pageDescription: ""
+    };
   },
   components: {
     Loader,

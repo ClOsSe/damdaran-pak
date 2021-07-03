@@ -6,7 +6,7 @@
         <h3>دسته بندی ها</h3>
         <ul v-for="(item, index) in selected" :key="index">
           <li>
-            <NuxtLink :to="`/blog/${item.slug}`">
+            <NuxtLink :to="`/blog/${encodeURIComponent(item.slug)}`">
               <!-- <i class="bx bxs-car-wash"></i> -->
               {{ item.title }}
             </NuxtLink>

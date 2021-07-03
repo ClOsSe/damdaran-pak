@@ -13,6 +13,7 @@
       <div class="blog-bottom">
         <h3>
           <NuxtLink
+            style="overflow:hidden"
             :to="
               `/${encodeURIComponent(
                 selected.category.slug
@@ -54,9 +55,6 @@
 </template>
 <script>
 export default {
-  props: ["selected"],
-  mounted() {
-    console.log(this.selected);
-  }
+  props: ["selected"]
 };
 </script>
