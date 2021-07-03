@@ -7,16 +7,8 @@
             <AboutUs style="margin-right:10%" v-bind="AboutUsInfo" />
           </div>
           <div class="col-lg-6">
-            <div class="about-img">
+            <div style="margin-left:10%" class="about-img">
               <img src="\NEWIMAGES\about-us.jpg" alt="About" />
-              <!-- <div class="video-wrap"> -->
-              <!-- <a
-                  href="https://www.youtube.com/watch?v=Dviu-D3Fijo"
-                  class="popup-youtube"
-                >
-                  <i class="bx bx-play"></i>
-                </a> -->
-              <!-- </div> -->
             </div>
           </div>
         </div>
