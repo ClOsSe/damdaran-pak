@@ -52,6 +52,24 @@ export default {
     Map,
     Subscribe
   },
+  head() {
+    return {
+      title: this.pageTitle,
+      meta: [
+        {
+          name: "Description",
+          content: this.pageDescription
+        }
+      ]
+    };
+  },
+  data() {
+    return {
+      pageTitle: "برای خرید گوسفند زنده با ما تماس بگیرید| تماس با ما",
+      pageDescription:
+        "برای خرید گوسفند و دام زنده به صورت آنلاین در تهران و کرج با شماره‌های زیر در تماس باشید. "
+    };
+  },
   mounted() {
     setTimeout(() => {
       document.querySelector(".loader").style.display = "none";
