@@ -43,9 +43,23 @@ export default {
       allFAQ: allFAQ
     };
   },
+  head() {
+    return {
+      title: this.pageTitle,
+      meta: [
+        {
+          name: "Description",
+          content: this.pageDescription
+        }
+      ]
+    };
+  },
   data() {
     return {
-      activIndex: 10
+      activIndex: 10,
+      pageTitle: "آیا امکان ارسال به درب منزل وجود دارد؟| سوالات متداول",
+      pageDescription:
+        "بله، تمامی دام‌ها به صورت رایگان وهمراه با اعزام قصاب به صورت رایگان ارسال می‌شوند. ارسال دام به تمامی نقاط تهران و کرج صورت می‌پذیرد."
     };
   },
 
