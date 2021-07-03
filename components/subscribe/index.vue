@@ -65,6 +65,7 @@ export default {
         .requestToJoinMagazine(formdata)
         .then(() => {
           this.$noty.success("ایمیل شما با موفقیت در خبرنامه ثبت شد");
+          this.email = "";
         })
         .catch(error => {
           //   error.response
