@@ -78,7 +78,6 @@ export default {
   },
   watchQuery: ["page"],
   mounted() {
-    console.log(this.$route.params.slug);
     setTimeout(() => {
       document.querySelector(".loader").style.display = "none";
     }, 1000);
