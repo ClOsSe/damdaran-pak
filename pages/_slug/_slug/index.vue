@@ -17,7 +17,7 @@
           <div class="col-lg-9">
             <div class="details-item">
               <div class="details-img">
-                <img src="assets/img/service-details3.jpg" alt="Details" />
+                <img :src="`${Details.image_url}`" alt="Details" />
                 <ul>
                   <li>
                     <i class="bx bx-user"></i>
@@ -38,14 +38,14 @@
                   </li>
                 </ul>
                 <h2>{{ Details.title }}</h2>
-                <p style="overflow:hidden" v-html="Details.title"></p>
+                <p style="overflow:hidden;" v-html="Details.title"></p>
               </div>
               <!-- comment cart -->
               <div v-if="Comments" class="details-comments">
                 <h3>نظرات</h3>
                 <CommentCart
-                  v-for="item in Comments"
-                  :key="item"
+                  v-for="(item, index) in Comments"
+                  :key="index"
                   v-bind="item"
                 />
               </div>
@@ -112,6 +112,7 @@ export default {
       .catch(error => {
         console.log(error);
       });
+    console.log(Details);
     return { AllCategories, Details, Comments };
   },
   head() {
