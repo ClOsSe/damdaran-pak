@@ -127,6 +127,13 @@ export default {
           if (res.data.message == "success") {
             this.$noty.success("فرم تماس با موفقیت ارسال شد");
             this.$noty.success("به زودی همکاران ما با شما تماس خواهند گرفت");
+            this.contactForm = {
+              name: "",
+              email: "",
+              phone_number: "",
+              subject: "",
+              message: ""
+            };
           }
         })
         .catch(error => {
