@@ -69,18 +69,30 @@ export default {
 
     return { lastPage, AllArticles };
   },
-
   watchQuery: ["page"],
-
   components: {
     Loader,
     PageTitleArea,
     Subscribe,
     BlogPost
   },
+  head() {
+    return {
+      title: this.pageTitle,
+      meta: [
+        {
+          name: "Description",
+          content: this.pageDescription
+        }
+      ]
+    };
+  },
   data() {
     return {
-      currentPage: 1
+      currentPage: 1,
+      pageTitle: "مجله‌ی دانستنی دام سبز| بلاگ| دام سبز",
+      pageDescription:
+        "مجله دانستنی دام سبز. دانستنی‌های مربوط به فرآورده‌های گوشتی و انواع دام. هر آنچه که باید درمورد خرید دام بدانید!"
     };
   },
   mounted() {
