@@ -21,8 +21,8 @@ class AboutUs {
     return HelperClass.getRequest(`/popular-articles`);
   }
   //get a category's articles
-  getCategoryArticels(slug) {
-    return HelperClass.getRequest(`/categories/${slug}/articles`);
+  getCategoryArticels(page, slug) {
+    return HelperClass.getRequest(`/categories/${slug}/articles?page=${page}`);
   }
   //increment article visit so call this to increase a hit
   addNewVisitToArticles(id) {

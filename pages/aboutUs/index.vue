@@ -111,7 +111,6 @@ import Subscribe from "@/components/subscribe";
 
 export default {
   async asyncData(context) {
-    console.log(context);
     let getBannerInformation = context.store.state.AllSetting.data.about_us;
     return { getBannerInformation };
   },

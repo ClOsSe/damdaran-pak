@@ -21,7 +21,7 @@
                 <ul>
                   <li>
                     <i class="bx bx-user"></i>
-                    توسط: <a href="#">{{ Details.writer }}</a>
+                    توسط: <a>{{ Details.writer }}</a>
                   </li>
                   <li>
                     <i class="bx bx-calendar-alt"></i>
@@ -31,10 +31,8 @@
                   </li>
                   <li>
                     <i class="bx bx-message-detail"></i>
-                    <a v-if="Comments" href="#"
-                      >نظرات ({{ Comments.length }})</a
-                    >
-                    <a v-else href="#">نظرات (0)</a>
+                    <a v-if="Comments">نظرات ({{ Comments.length }})</a>
+                    <a v-else>نظرات (0)</a>
                   </li>
                 </ul>
                 <h2>{{ Details.title }}</h2>

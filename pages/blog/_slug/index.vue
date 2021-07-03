@@ -25,18 +25,17 @@
         <div class="pagination-area">
           <ul>
             <li>
-              <a href="#">قبلی</a>
+              <a @click="GetPreviousPageNummber()">قبلی</a>
             </li>
             <li v-for="value in lastPage" :key="value">
               <NuxtLink
-                :to="
-                  `/blog/${$route.params.slug}/${$route.params.slug}?page=${value}`
-                "
+                @click.native="GetCurrentPageNummber(value)"
+                :to="`/blog/${$route.params.slug}?page=${value}`"
                 >{{ value }}</NuxtLink
               >
             </li>
             <li>
-              <a href="#">بعدی</a>
+              <a @click="GetNextPageNummber()">بعدی</a>
             </li>
           </ul>
         </div>
@@ -58,8 +57,12 @@ import PageTitleArea from "@/components/pageTitleArea";
 
 export default {
   async asyncData(context) {
+    let page = context.route.query.page;
+    if (!page) {
+      page = 1;
+    }
     let allArticlesWithSlug = await blogsAPI
-      .getCategoryArticels(context.params.slug)
+      .getCategoryArticels(page, context.params.slug)
       .then(res => {
         return res.data.data;
       });
@@ -73,10 +76,36 @@ export default {
     BlogPost,
     PageTitleArea
   },
+  watchQuery: ["page"],
   mounted() {
+    console.log(this.$route.params.slug);
     setTimeout(() => {
       document.querySelector(".loader").style.display = "none";
     }, 1000);
+  },
+  data() {
+    return {
+      currentPage: 1
+    };
+  },
+  methods: {
+    GetCurrentPageNummber(currentPage) {
+      this.currentPage = currentPage;
+    },
+    GetPreviousPageNummber() {
+      this.currentPage === 1 ? "" : (this.currentPage = this.currentPage - 1);
+      this.$router.push(
+        `/blog/${this.$route.params.slug}/?page=${this.currentPage}`
+      );
+    },
+    GetNextPageNummber() {
+      this.currentPage === this.lastPage
+        ? ""
+        : (this.currentPage = this.currentPage + 1);
+      this.$router.push(
+        `/blog/${this.$route.params.slug}/?page=${this.currentPage}`
+      );
+    }
   }
 };
 </script>
