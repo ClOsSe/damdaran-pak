@@ -1,7 +1,7 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div class="loader">
+    <div v-show="showLoader" class="loader">
       <Loader />
     </div>
     <!-- End Preloader -->
@@ -56,6 +56,7 @@ export default {
   },
   data() {
     return {
+      showLoader: true,
       activIndex: 10,
       pageTitle: "آیا امکان ارسال به درب منزل وجود دارد؟| سوالات متداول",
       pageDescription:
@@ -64,9 +65,7 @@ export default {
   },
 
   mounted() {
-    setTimeout(() => {
-      document.querySelector(".loader").style.display = "none";
-    }, 1000);
+    this.showLoader = false;
   },
   components: {
     PageTitleArea,

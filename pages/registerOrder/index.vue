@@ -1,7 +1,7 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div class="loader">
+    <div v-show="showLoader" class="loader">
       <Loader />
     </div>
     <!-- End Preloader -->
@@ -32,12 +32,11 @@ export default {
     Subscribe
   },
   mounted() {
-    setTimeout(() => {
-      document.querySelector(".loader").style.display = "none";
-    }, 1000);
+    this.showLoader = false;
   },
   data() {
     return {
+      showLoader: true,
       title: this.pageTitle,
       meta: [
         {

@@ -1,7 +1,7 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div class="loader">
+    <div v-show="showLoader" class="loader">
       <Loader />
     </div>
     <!-- End Preloader -->
@@ -41,12 +41,11 @@ export default {
     Subscribe
   },
   mounted() {
-    setTimeout(() => {
-      document.querySelector(".loader").style.display = "none";
-    }, 1000);
+    this.showLoader = false;
   },
   data() {
     return {
+      showLoader: true,
       pageTitle: "404| صفحه در درسترس نیست| دام سبز",
       pageDescription:
         "دام زنده‌ای در این صفحه موجود نیست! برای خرید دام زنده به صفحه‌ی اصلی مراجعه کنید. "

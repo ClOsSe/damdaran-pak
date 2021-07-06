@@ -1,7 +1,7 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div class="loader">
+    <div v-show="showLoader" class="loader">
       <Loader />
     </div>
     <!-- End Preloader -->
@@ -89,6 +89,7 @@ export default {
   },
   data() {
     return {
+      showLoader: true,
       currentPage: 1,
       pageTitle: "مجله‌ی دانستنی دام سبز| بلاگ| دام سبز",
       pageDescription:
@@ -96,9 +97,7 @@ export default {
     };
   },
   mounted() {
-    setTimeout(() => {
-      document.querySelector(".loader").style.display = "none";
-    }, 1000);
+    this.showLoader = false;
   },
   methods: {
     GetCurrentPageNummber(currentPage) {

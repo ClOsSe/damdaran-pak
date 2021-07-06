@@ -1,7 +1,7 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div class="loader">
+    <div v-show="showLoader" class="loader">
       <Loader />
     </div>
     <!-- End Preloader -->
@@ -82,6 +82,7 @@ export default {
   },
   data() {
     return {
+      showLoader: true,
       pageTitle: "فروش گوسفند زنده| دام زنده| دام سبز",
       pageDescription:
         "فروش گوسفند زنده باکیفیت. فروش انواع دام‌های گوشتی باکیفیت و ارگانیک، ارسال به سراسر تهران و کرج همراه با اعزام قصاب. ",
@@ -103,9 +104,7 @@ export default {
     Subscribe
   },
   mounted() {
-    setTimeout(() => {
-      document.querySelector(".loader").style.display = "none";
-    }, 1000);
+    this.showLoader = false;
   }
 };
 </script>

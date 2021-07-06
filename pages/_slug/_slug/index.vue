@@ -1,7 +1,7 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div class="loader">
+    <div v-show="showLoader" class="loader">
       <Loader />
     </div>
     <!-- End Preloader -->
@@ -130,14 +130,17 @@ export default {
     CommentCart,
     SendComment
   },
+  data() {
+    return {
+      showLoader: true
+    };
+  },
   mounted() {
     if (!localStorage.getItem("userVisited")) {
       //  data = id or slug
       this.isUserVisitedBlog(this.Details.id);
     }
-    setTimeout(() => {
-      document.querySelector(".loader").style.display = "none";
-    }, 1000);
+    this.showLoader = false;
   },
   methods: {
     isUserVisitedBlog(id) {
