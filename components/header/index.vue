@@ -16,7 +16,7 @@
               <img
                 style="max-width:135px; max-height:50px "
                 :src="
-                  `${$store.state.imageBaseUrl}/storage/settings/logo/${$store.state.AllSetting.data.logo_image}`
+                  `${$store.state.imageBaseUrl}/storage/settings/logo/${logoURL}`
                 "
                 alt="Logo"
               />
@@ -70,14 +70,14 @@
                 <a
                   style="padding:0 !important; background:none !important;"
                   class="p-0 bg-none"
-                  :href="$store.state.AllSetting.data.instagram"
+                  :href="socialLink.instagram"
                 >
                   <i class="bx bxl-instagram"></i>
                 </a>
                 <a
                   style="padding:0 !important; background:none !important;"
                   class="p-0 bg-none"
-                  :href="$store.state.AllSetting.data.whatsapp"
+                  :href="socialLink.whatsapp"
                 >
                   <i class="bx bxl-whatsapp"></i>
                 </a>
@@ -120,13 +120,36 @@
   </div>
 </template>
 <script>
+import GeneralAPI from "@/API/asyncAPI/generalAPI.js";
+
 export default {
   data() {
     return {
-      sideBar: true
+      sideBar: true,
+      socialLink: {
+        instagram: "",
+        whatsapp: "",
+        facebook: "",
+        linkedin: "",
+        telegram: ""
+      },
+      logoURL: ""
     };
   },
+  created() {
+    this.getAllSocialMediaLink();
+  },
   methods: {
+    getAllSocialMediaLink() {
+      GeneralAPI.getGeneralInformation().then(res => {
+        this.socialLink.instagram = res.data.data.instagram;
+        this.socialLink.whatsapp = res.data.data.whatsapp;
+        this.socialLink.facebook = res.data.data.facebook;
+        this.socialLink.linkedin = res.data.data.linkin;
+        this.socialLink.telegram = res.data.data.telegram;
+        this.logoURL = res.data.data.logo_image;
+      });
+    },
     sideBarShow() {
       if (this.sideBar == false) {
         document.querySelector(".mobile_menu").style.right = "-75vw";
