@@ -42,8 +42,16 @@ import ContactForm from "@/components/contactForm";
 import Map from "@/components/map";
 import Subscribe from "@/components/subscribe";
 import PageTitleArea from "@/components/pageTitleArea";
+import GeneralAPI from "@/API/asyncAPI/generalAPI.js";
 
 export default {
+  async asyncData(context) {
+    await GeneralAPI.getGeneralInformation().then(res => {
+      context.store.dispatch("getAllSetting", res.data);
+    });
+    // let getBannerInformation = context.store.state.AllSetting.data.about_us;
+    // return { getBannerInformation };
+  },
   components: {
     PageTitleArea,
     // Loader,
