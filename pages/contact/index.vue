@@ -1,9 +1,9 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div v-show="showLoader" class="loader">
-      <Loader />
-    </div>
+    <!-- <div v-show="showLoader" class="loader"> -->
+    <!-- <Loader /> -->
+    <!-- </div> -->
     <!-- End Preloader -->
 
     <!-- Page Title -->
@@ -36,7 +36,7 @@
   </div>
 </template>
 <script>
-import Loader from "@/components/loader";
+// import Loader from "@/components/loader";
 import LocationCard from "@/components/locationCard";
 import ContactForm from "@/components/contactForm";
 import Map from "@/components/map";
@@ -46,7 +46,7 @@ import PageTitleArea from "@/components/pageTitleArea";
 export default {
   components: {
     PageTitleArea,
-    Loader,
+    // Loader,
     LocationCard,
     ContactForm,
     Map,
@@ -65,14 +65,14 @@ export default {
   },
   data() {
     return {
-      showLoader: true,
+      // showLoader: true,
       pageTitle: "برای خرید گوسفند زنده با ما تماس بگیرید| تماس با ما",
       pageDescription:
         "برای خرید گوسفند و دام زنده به صورت آنلاین در تهران و کرج با شماره‌های زیر در تماس باشید. "
     };
-  },
-  mounted() {
-    this.showLoader = false;
   }
+  // mounted() {
+  // this.showLoader = false;
+  // }
 };
 </script>

@@ -1,9 +1,9 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div v-show="showLoader" class="loader">
-      <Loader />
-    </div>
+    <!-- <div v-show="showLoader" class="loader"> -->
+    <!-- <Loader /> -->
+    <!-- </div> -->
     <!-- End Preloader -->
 
     <!-- Banner -->
@@ -45,7 +45,7 @@ import About from "../components/about";
 import Estimate from "../components/Estimate";
 import RegisterOrder from "../components/registerOrderForm";
 import Subscribe from "../components/subscribe";
-import Loader from "../components/loader";
+// import Loader from "../components/loader";
 import GeneralAPI from "@/API/asyncAPI/generalAPI.js";
 import getCommentsForSlider from "@/API/asyncAPI/slider.js";
 
@@ -82,7 +82,7 @@ export default {
   },
   data() {
     return {
-      showLoader: true,
+      // showLoader: true,
       pageTitle: "فروش گوسفند زنده| دام زنده| دام سبز",
       pageDescription:
         "فروش گوسفند زنده باکیفیت. فروش انواع دام‌های گوشتی باکیفیت و ارگانیک، ارسال به سراسر تهران و کرج همراه با اعزام قصاب. ",
@@ -95,16 +95,16 @@ export default {
   },
   components: {
     Banner,
-    Loader,
+    // Loader,
     Counter,
     Choose,
     About,
     Estimate,
     RegisterOrder,
     Subscribe
-  },
-  mounted() {
-    this.showLoader = false;
   }
+  // mounted() {
+  // this.showLoader = false;
+  // }
 };
 </script>

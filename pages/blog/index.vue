@@ -1,9 +1,9 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div v-show="showLoader" class="loader">
-      <Loader />
-    </div>
+    <!-- <div v-show="showLoader" class="loader"> -->
+    <!-- <Loader /> -->
+    <!-- </div> -->
     <!-- End Preloader -->
 
     <!-- Page Title -->
@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import Loader from "@/components/loader";
+// import Loader from "@/components/loader";
 import Subscribe from "@/components/subscribe";
 import BlogPost from "@/components/blogPost";
 import blogsAPI from "@/API/asyncAPI/blogsAPI";
@@ -71,7 +71,7 @@ export default {
   },
   watchQuery: ["page"],
   components: {
-    Loader,
+    // Loader,
     PageTitleArea,
     Subscribe,
     BlogPost
@@ -89,16 +89,16 @@ export default {
   },
   data() {
     return {
-      showLoader: true,
+      // showLoader: true,
       currentPage: 1,
       pageTitle: "مجله‌ی دانستنی دام سبز| بلاگ| دام سبز",
       pageDescription:
         "مجله دانستنی دام سبز. دانستنی‌های مربوط به فرآورده‌های گوشتی و انواع دام. هر آنچه که باید درمورد خرید دام بدانید!"
     };
   },
-  mounted() {
-    this.showLoader = false;
-  },
+  // mounted() {
+  // this.showLoader = false;
+  // },
   methods: {
     GetCurrentPageNummber(currentPage) {
       this.currentPage = currentPage;

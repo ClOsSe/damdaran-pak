@@ -1,9 +1,9 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div v-show="showLoader" class="loader">
-      <Loader />
-    </div>
+    <!-- <div v-show="showLoader" class="loader"> -->
+    <!-- <Loader /> -->
+    <!-- </div> -->
     <!-- End Preloader -->
 
     <!-- Page Title -->
@@ -25,7 +25,7 @@
 </template>
 <script>
 import PageTitleArea from "@/components/pageTitleArea";
-import Loader from "@/components/loader";
+// import Loader from "@/components/loader";
 import Counter from "@/components/counter";
 import Subscribe from "@/components/subscribe";
 import GeneralAPI from "@/API/asyncAPI/generalAPI.js";
@@ -41,7 +41,7 @@ export default {
 
   data() {
     return {
-      showLoader: true,
+      // showLoader: true,
       pageTitle: "خرید گوسفند زنده آنلاین| دام سبز| درباره‌ی ما",
       pageDescription:
         "خرید گوسفند زنده، بابالاترین کیفیت به صورت مجازی! گروه دامداری دام سبز."
@@ -60,12 +60,12 @@ export default {
   },
   components: {
     PageTitleArea,
-    Loader,
+    // Loader,
     Counter,
     Subscribe
-  },
-  mounted() {
-    this.showLoader = false;
   }
+  // mounted() {
+  // this.showLoader = false;
+  // }
 };
 </script>

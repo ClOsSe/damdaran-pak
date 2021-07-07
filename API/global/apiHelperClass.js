@@ -1,8 +1,8 @@
 import axios from "axios";
 // import store from "../../store/state";
 
-// const BaseUrl = "http://localhost:8000/api/frontend";
-const BaseUrl = "https://panelaccess.damesabz.com/api/frontend";
+const BaseUrl = "http://localhost:8000/api/frontend";
+// const BaseUrl = "https://panelaccess.damesabz.com/api/frontend";
 // const BaseUrl = `${store.state.imageBaseUrl}`;
 class HelperClass {
   // delete

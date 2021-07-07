@@ -1,9 +1,9 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div v-show="showLoader" class="loader">
-      <Loader />
-    </div>
+    <!-- <div v-show="showLoader" class="loader"> -->
+    <!-- <Loader /> -->
+    <!-- </div> -->
     <!-- End Preloader -->
 
     <!-- Error -->
@@ -33,19 +33,19 @@
   </div>
 </template>
 <script>
-import Loader from "@/components/loader";
+// import Loader from "@/components/loader";
 import Subscribe from "@/components/subscribe";
 export default {
   components: {
-    Loader,
+    // Loader,
     Subscribe
   },
-  mounted() {
-    this.showLoader = false;
-  },
+  // mounted() {
+  // this.showLoader = false;
+  // },
   data() {
     return {
-      showLoader: true,
+      // showLoader: true,
       pageTitle: "404| صفحه در درسترس نیست| دام سبز",
       pageDescription:
         "دام زنده‌ای در این صفحه موجود نیست! برای خرید دام زنده به صفحه‌ی اصلی مراجعه کنید. "

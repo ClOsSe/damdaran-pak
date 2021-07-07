@@ -1,9 +1,9 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <div v-show="showLoader" class="loader">
-      <Loader />
-    </div>
+    <!-- <div v-show="showLoader" class="loader"> -->
+    <!-- <Loader /> -->
+    <!-- </div> -->
     <!-- End Preloader -->
 
     <!-- Page Title -->
@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import Loader from "@/components/loader";
+// import Loader from "@/components/loader";
 import Subscribe from "@/components/subscribe";
 import BlogPost from "@/components/blogPost";
 import blogsAPI from "@/API/asyncAPI/blogsAPI";
@@ -71,18 +71,18 @@ export default {
     return { lastPage, AllArticles };
   },
   components: {
-    Loader,
+    // Loader,
     Subscribe,
     BlogPost,
     PageTitleArea
   },
   watchQuery: ["page"],
-  mounted() {
-    this.showLoader = false;
-  },
+  // mounted() {
+  // this.showLoader = false;
+  // },
   data() {
     return {
-      showLoader: true,
+      // showLoader: true,
       currentPage: 1
     };
   },
