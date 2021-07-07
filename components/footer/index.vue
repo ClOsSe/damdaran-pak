@@ -62,7 +62,7 @@
               </div>
               <div class="footer-social">
                 <ul>
-                  <li>
+                  <!-- <li>
                     <a :href="socialLink.facebook" target="_blank">
                       <i class="bx bxl-facebook"></i>
                     </a>
@@ -75,6 +75,11 @@
                   <li>
                     <a :href="socialLink.linkin" target="_blank">
                       <i class="bx bxl-linkedin"></i>
+                    </a>
+                  </li> -->
+                  <li>
+                    <a :href="socialLink.whatsapp" target="_blank">
+                      <i class="bx bxl-whatsapp"></i>
                     </a>
                   </li>
                   <li>

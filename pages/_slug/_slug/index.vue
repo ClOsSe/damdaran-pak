@@ -1,9 +1,9 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <!-- <div v-show="showLoader" class="loader"> -->
-    <!-- <Loader /> -->
-    <!-- </div> -->
+    <div v-show="showLoader" class="loader">
+      <Loader />
+    </div>
     <!-- End Preloader -->
 
     <!-- Page Title -->
@@ -70,7 +70,7 @@
   </div>
 </template>
 <script>
-// import Loader from "@/components/loader";
+import Loader from "@/components/loader";
 import Subscribe from "@/components/subscribe";
 import SideColumn from "@/components/blogSidepanel";
 import CommentCart from "@/components/commentCart";
@@ -124,23 +124,23 @@ export default {
     };
   },
   components: {
-    // Loader,
+    Loader,
     Subscribe,
     SideColumn,
     CommentCart,
     SendComment
   },
-  // data() {
-  // return {
-  // showLoader: true
-  // };
-  // },
+  data() {
+    return {
+      showLoader: true
+    };
+  },
   mounted() {
     if (!localStorage.getItem("userVisited")) {
       //  data = id or slug
       this.isUserVisitedBlog(this.Details.id);
     }
-    // this.showLoader = false;
+    this.showLoader = false;
   },
   methods: {
     isUserVisitedBlog(id) {

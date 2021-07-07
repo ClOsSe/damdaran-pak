@@ -1,9 +1,9 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <!-- <div v-show="showLoader" class="loader"> -->
-    <!-- <Loader /> -->
-    <!-- </div> -->
+    <div v-show="showLoader" class="loader">
+      <Loader />
+    </div>
     <!-- End Preloader -->
 
     <!-- Page Title -->
@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-// import Loader from "@/components/loader";
+import Loader from "@/components/loader";
 import RegisterOrderForm from "@/components/registerOrderForm";
 import Subscribe from "@/components/subscribe";
 import PageTitleArea from "@/components/pageTitleArea";
@@ -27,16 +27,16 @@ import PageTitleArea from "@/components/pageTitleArea";
 export default {
   components: {
     PageTitleArea,
-    // Loader,
+    Loader,
     RegisterOrderForm,
     Subscribe
   },
-  // mounted() {
-  // this.showLoader = false;
-  // },
+  mounted() {
+    this.showLoader = false;
+  },
   data() {
     return {
-      // showLoader: true,
+      showLoader: true,
       title: this.pageTitle,
       meta: [
         {

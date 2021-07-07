@@ -1,9 +1,9 @@
 <template>
   <div dir="rtl">
     <!-- Preloader -->
-    <!-- <div v-show="showLoader" class="loader"> -->
-    <!-- <Loader /> -->
-    <!-- </div> -->
+    <div v-show="showLoader" class="loader">
+      <Loader />
+    </div>
     <!-- End Preloader -->
 
     <!-- Page Title -->
@@ -22,7 +22,7 @@
   </div>
 </template>
 <script>
-// import Loader from "@/components/loader";
+import Loader from "@/components/loader";
 import Subscribe from "@/components/subscribe";
 import FAQ from "@/components/faq";
 import FAQAPI from "@/API/asyncAPI/faq.js";
@@ -56,7 +56,7 @@ export default {
   },
   data() {
     return {
-      // showLoader: true,
+      showLoader: true,
       activIndex: 10,
       pageTitle: "آیا امکان ارسال به درب منزل وجود دارد؟| سوالات متداول",
       pageDescription:
@@ -64,12 +64,12 @@ export default {
     };
   },
 
-  // mounted() {
-  // this.showLoader = false;
-  // },
+  mounted() {
+    this.showLoader = false;
+  },
   components: {
     PageTitleArea,
-    // Loader,
+    Loader,
     Subscribe,
     FAQ
   }
