@@ -1,6 +1,8 @@
 <template>
   <div>
-    <Header />
+    <client-only>
+      <Header />
+    </client-only>
     <Nuxt />
     <Footer />
   </div>

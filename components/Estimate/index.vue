@@ -1,10 +1,10 @@
 <template>
   <div dir="rtl">
-    <section class="review-area ptb-100">
-      <div class="review-shape">
-        <img src="@/assets/img/home-one/banner-shape6.png" alt="Shape" />
-      </div>
-      <client-only>
+    <client-only>
+      <section class="review-area ptb-100">
+        <div class="review-shape">
+          <img src="@/assets/img/home-one/banner-shape6.png" alt="Shape" />
+        </div>
         <div class="container">
           <div class="section-title">
             <span class="sub-title">بازخورد مشتریان</span>
@@ -41,8 +41,8 @@
             </carousel>
           </div>
         </div>
-      </client-only>
-    </section>
+      </section>
+    </client-only>
   </div>
 </template>
 <script>

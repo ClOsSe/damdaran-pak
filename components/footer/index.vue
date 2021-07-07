@@ -127,7 +127,6 @@ export default {
   methods: {
     getAllSocialMediaLink() {
       GeneralAPI.getGeneralInformation().then(res => {
-        console.log(res.data.data);
         this.socialLink.instagram = res.data.data.instagram;
         this.socialLink.whatsapp = res.data.data.whatsapp;
         this.socialLink.facebook = res.data.data.facebook;
