@@ -4,14 +4,15 @@
 
 .cta-call .bxl-instagram::before {
   font-size: 35px;
-  background-color: blanchedalmond;
+  /* background-color: blanchedalmond; */
   border-radius: 50px;
+  color: rgb(255, 255, 255);
 }
 .cta-call .bxl-whatsapp::before {
   font-size: 35px;
-  background-color: #1ebea5;
+  /* background-color: blanchedalmond; */
   border-radius: 50px;
-  color: white;
+  color: #ffffff;
 }
 
 /* add class style */

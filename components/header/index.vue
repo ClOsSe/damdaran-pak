@@ -81,6 +81,15 @@
                 >
                   <i class="bx bxl-whatsapp"></i>
                 </a>
+                <a
+                  style="padding:0 !important; background:none !important;width:40px;height:40px"
+                  class="p-0 bg-none"
+                  :href="'tel:' + socialLink.cell"
+                  target="_blank"
+                  ><img
+                    style="width:100%;padding:2px;margin-top:5px"
+                    src="phone.png"
+                /></a>
               </div>
             </div>
           </nav>
@@ -131,6 +140,7 @@ export default {
         whatsapp: "",
         facebook: "",
         linkedin: "",
+        cell: "",
         telegram: ""
       },
       logoURL: ""
@@ -147,6 +157,7 @@ export default {
         this.socialLink.facebook = res.data.data.facebook;
         this.socialLink.linkedin = res.data.data.linkin;
         this.socialLink.telegram = res.data.data.telegram;
+        this.socialLink.cell = res.data.data.cell;
         this.logoURL = res.data.data.logo_image;
       });
     },
