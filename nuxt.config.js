@@ -10,7 +10,7 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/Untitled-1.jpg" }],
     script: [
       // {src:'/name.js'}
       { src: "/js/jquery-3.5.1.min.js" },
@@ -67,8 +67,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["@nuxtjs/axios"],
   axios: {
-    baseURL: "http://localhost:8000/api/frontend" // Used as fallback if no runtime config is provided
-    // baseURL: "https://panelaccess.damesabz.com/api/frontend" // Used as fallback if no runtime config is provided
+    // baseURL: "http://localhost:8000/api/frontend" // Used as fallback if no runtime config is provided
+    baseURL: "https://panelaccess.damesabz.com/api/frontend" // Used as fallback if no runtime config is provided
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
