@@ -36,7 +36,7 @@
                   </li>
                 </ul>
                 <h2>{{ Details.title }}</h2>
-                <p style="overflow:hidden;" v-html="Details.title"></p>
+                <p style="overflow:hidden;" v-html="Details.content"></p>
               </div>
               <!-- comment cart -->
               <div v-if="Comments" class="details-comments">
@@ -77,20 +77,26 @@ import CommentCart from "@/components/commentCart";
 import blogsAPI from "@/API/asyncAPI/blogsAPI";
 import commentsAPI from "@/API/API/commentsAPI";
 import SendComment from "@/components/sendCommentCart";
+import GeneralAPI from "@/API/asyncAPI/generalAPI.js";
 
 export default {
   // fetch data
   async asyncData(context) {
+    await GeneralAPI.getGeneralInformation().then(res => {
+      context.store.dispatch("getAllSetting", res.data);
+    });
+
     // get one article with slug
     let Details = await blogsAPI
-      .getSpecificArticle(encodeURIComponent(context.params.slug))
+      .getSpecificArticle(encodeURIComponent(context.route.params.slug))
       .then(Articel => {
+        console.log(Articel.data.data.article);
         return Articel.data.data.article;
       });
 
     // get all comments based on slug
     let Comments = await commentsAPI
-      .getAllcomments(encodeURIComponent(context.params.slug))
+      .getAllcomments(encodeURIComponent(context.route.params.slug))
       .then(AllComments => {
         let res;
         if (AllComments.data != "") {

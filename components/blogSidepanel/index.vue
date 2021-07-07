@@ -88,8 +88,14 @@
 <script>
 import membership from "@/API/API/membership";
 import HelperClass from "@/API/global/HelperClass.js";
+import GeneralAPI from "@/API/asyncAPI/generalAPI.js";
 
 export default {
+  async asyncData(context) {
+    await GeneralAPI.getGeneralInformation().then(res => {
+      context.store.dispatch("getAllSetting", res.data);
+    });
+  },
   props: ["selected"],
   data() {
     return {

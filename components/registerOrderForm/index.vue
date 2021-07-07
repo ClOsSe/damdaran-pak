@@ -65,7 +65,7 @@
                   type="submit"
                   class="btn cmn-btn"
                 >
-                  دریافت برنامه
+                  ثبت سفارش
                 </button>
               </div>
             </div>

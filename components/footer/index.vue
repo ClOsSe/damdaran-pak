@@ -62,21 +62,6 @@
               </div>
               <div class="footer-social">
                 <ul>
-                  <!-- <li>
-                    <a :href="socialLink.facebook" target="_blank">
-                      <i class="bx bxl-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a :href="socialLink.tweeter" target="_blank">
-                      <i class="bx bxl-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a :href="socialLink.linkin" target="_blank">
-                      <i class="bx bxl-linkedin"></i>
-                    </a>
-                  </li> -->
                   <li>
                     <a :href="socialLink.whatsapp" target="_blank">
                       <i class="bx bxl-whatsapp"></i>
@@ -92,10 +77,13 @@
             </div>
           </div>
         </div>
-        <div class="copyright-area">
-          <p>
+        <div style="margin-top:30px" class="copyright-area"></div>
+        <div class="copyRight" style="z-index:1000;">
+          <p style="margin-top:30px">
             طراحی و توسعه سایت توسط سلطان وب
-            <a href="www.soltanweb.com" target="_blank">www.soltanweb.com</a>
+            <a href="https://soltanweb.com" target="_blank"
+              >www.soltanweb.com</a
+            >
           </p>
         </div>
       </div>
@@ -153,3 +141,21 @@ export default {
   }
 };
 </script>
+<style scoped>
+.copyRight {
+  border-top: 1px solid #f5f5f529;
+  text-align: center;
+}
+.copyRight p {
+  margin-bottom: 0;
+  color: #fff;
+}
+.copyRight p a {
+  display: inline-block;
+  font-weight: 600;
+  color: #fdb139;
+}
+.copyRight p a:hover {
+  color: #fff;
+}
+</style>

@@ -9,7 +9,7 @@
             </div> -->
 
       <!-- Menu For Desktop Device -->
-      <div class="main-nav">
+      <div class="main-nav" :dir="innerWidth < 768 ? 'ltr' : 'rtl'">
         <div class="container">
           <nav class="navbar navbar-expand-lg navbar-light">
             <NuxtLink class="navbar-brand" to="/">
@@ -22,7 +22,7 @@
               />
             </NuxtLink>
 
-            <button class=" menuButton d-lg-none" @click="sideBarShow()">
+            <button class="menuButton d-lg-none" @click="sideBarShow()">
               <div>
                 <div class="line"></div>
                 <div class="line"></div>
@@ -66,7 +66,10 @@
               </ul>
             </div>
             <div class="side-nav">
-              <div class="cta-call">
+              <div
+                class="cta-call d-flex "
+                style="align-items: baseline !important;"
+              >
                 <a
                   style="padding:0 !important; background:none !important;"
                   class="p-0 bg-none"
@@ -82,14 +85,16 @@
                   <i class="bx bxl-whatsapp"></i>
                 </a>
                 <a
-                  style="padding:0 !important; background:none !important;width:40px;height:40px"
+                  style="padding:0 !important; background:none !important;width:30px;height:30px"
                   class="p-0 bg-none"
                   :href="'tel:' + socialLink.cell"
                   target="_blank"
-                  ><img
-                    style="width:100%;padding:2px;margin-top:5px"
-                    src="phone.png"
-                /></a>
+                >
+                  <i
+                    style="font-size:30px;margn-top:4px"
+                    class="bx bx-phone"
+                  ></i>
+                </a>
               </div>
             </div>
           </nav>
@@ -135,6 +140,7 @@ export default {
   data() {
     return {
       sideBar: true,
+      innerWidth: window.innerWidth,
       socialLink: {
         instagram: "",
         whatsapp: "",
@@ -146,6 +152,7 @@ export default {
       logoURL: ""
     };
   },
+
   created() {
     this.getAllSocialMediaLink();
   },

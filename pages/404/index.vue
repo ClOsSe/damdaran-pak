@@ -11,9 +11,13 @@
       <div class="error-item">
         <div class="d-table">
           <div class="d-table-cell">
-            <div class="container">
+            <div class="container my-5">
               <div class="error-img">
-                <img src="@/assets/NEWIMAGES/404-error.jpg" alt="Error" />
+                <img
+                  style="max-width:350px;"
+                  src="@/assets/NEWIMAGES/404-error.png"
+                  alt="Error"
+                />
                 <img src="@/assets/img/error-shape1.png" alt="Shape" />
                 <img src="@/assets/img/error-shape2.png" alt="Shape" />
                 <img src="@/assets/img/error-shape3.png" alt="Shape" />

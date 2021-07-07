@@ -34,7 +34,7 @@
                       class="btn button-submitt"
                       type="submit"
                     >
-                      مشترک شدن
+                      ثبت اشتراک
                     </button>
                   </div>
                 </div>

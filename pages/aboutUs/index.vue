@@ -11,7 +11,7 @@
     <!-- End Page Title -->
 
     <!--  aboutUs content -->
-    <section v-html="getBannerInformation"></section>
+    <section style="padding:5%" v-html="getBannerInformation"></section>
     <!-- end aboutUs content -->
 
     <!-- Counter -->
