@@ -58,3 +58,4 @@ export default {
   props: ["selected"]
 };
 </script>
+<style></style>
