@@ -32,7 +32,7 @@
                   </li>
 
                   <li>
-                    <NuxtLink to="/registerOrder">ثبت سفارش</NuxtLink>
+                    <NuxtLink to="/registerOrder">سفارش دام</NuxtLink>
                   </li>
                   <li>
                     <NuxtLink to="/blog">وبلاگ</NuxtLink>

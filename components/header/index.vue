@@ -44,7 +44,7 @@
                   <NuxtLink
                     to="/registerOrder"
                     class="nav-link dropdown-toggle "
-                    >ثبت سفارش
+                    >سفارش دام
                   </NuxtLink>
                 </li>
 

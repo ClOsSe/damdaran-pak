@@ -4,7 +4,7 @@
       <div class="container">
         <div class="estimate-content">
           <div class="section-title">
-            <h2>ثبت سفارش</h2>
+            <h2>سفارش دام</h2>
           </div>
           <form @submit.prevent="submitOrder()">
             <div class="row">
@@ -65,7 +65,7 @@
                   type="submit"
                   class="btn cmn-btn"
                 >
-                  ثبت سفارش
+                  سفارش دام
                 </button>
               </div>
             </div>
