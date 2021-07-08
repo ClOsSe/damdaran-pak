@@ -28,12 +28,12 @@
             <span>{{ selected.writer }}</span>
           </li>
           <li>
-            <span>{{ selected.comments_count }}</span>
             <a>نظرات</a>
+            <span>{{ selected.comments_count }}</span>
           </li>
           <li>
-            <span>{{ selected.hit }}</span>
             <a>مشاهده</a>
+            <span>{{ selected.hit }}</span>
           </li>
         </ul>
         <p>
