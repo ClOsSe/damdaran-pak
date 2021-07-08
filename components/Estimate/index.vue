@@ -3,7 +3,11 @@
     <client-only>
       <section class="review-area ptb-100">
         <div class="review-shape">
-          <img src="@/assets/img/home-one/banner-shape6.png" alt="Shape" />
+          <img
+            class="avatar-user"
+            src="@/assets/img/home-one/banner-shape6.png"
+            alt="Shape"
+          />
         </div>
         <div class="container">
           <div class="section-title">
@@ -66,7 +70,7 @@ export default {
   max-width: 100px;
   border-radius: 10px;
   right: -32px;
-  top: 5px;
+  top: -45px;
 }
 .content {
   text-align: center;
