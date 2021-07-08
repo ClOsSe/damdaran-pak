@@ -697,8 +697,8 @@ button:focus {
   margin-bottom: 30px;
 }
 .about-area .about-img {
-  background-image: url(../NEWIMAGES/about-us.jpg);
-  background-size: cover;
+  /* background-image: url(../NEWIMAGES/about-us.jpg); */
+  /* background-size: cover; */
   background-position: top center;
   background-repeat: no-repeat;
   width: 100%;

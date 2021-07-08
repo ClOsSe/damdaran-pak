@@ -7,8 +7,8 @@
             <AboutUs style="margin-right:10%" v-bind="AboutUsInfo" />
           </div>
           <div class="col-lg-6">
-            <div style="margin-left:10%" class="about-img">
-              <img src="\NEWIMAGES\about-us.jpg" alt="About" />
+            <div>
+              <img src="/NEWIMAGES\about-us.jpg" alt="" />
             </div>
           </div>
         </div>
