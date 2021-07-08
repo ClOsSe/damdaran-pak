@@ -1822,13 +1822,12 @@ footer {
   margin-left: 8px;
   margin-right: 8px;
 }
-.blog-item .blog-bottom ul li:before {
-  position: absolute;
-  content: "/";
-  top: 0;
-  right: -13px;
-  color: #1d3d5d;
-}
+/* .blog-item .blog-bottom ul li:before { */
+/* position: absolute; */
+/* top: 0; */
+/* right: -13px; */
+/* color: #1d3d5d; */
+/* } */
 .blog-item .blog-bottom ul li:last-child:before {
   display: none;
 }

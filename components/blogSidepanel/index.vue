@@ -63,7 +63,7 @@
             type="submit"
             class="btn cmn-btn"
           >
-            مشترک شدن
+            ثبت اشتراک
           </button>
         </form>
       </div>

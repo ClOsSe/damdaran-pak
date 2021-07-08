@@ -24,8 +24,8 @@
         </h3>
         <ul>
           <li>
-            <span>توسط:</span>
-            <a>{{ selected.writer }}</a>
+            <a>توسط:</a>
+            <span>{{ selected.writer }}</span>
           </li>
           <li>
             <span>{{ selected.comments_count }}</span>
