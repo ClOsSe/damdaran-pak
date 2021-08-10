@@ -5,7 +5,7 @@
         <div class="d-table-cell">
           <div class="container">
             <div class="title-item">
-              <h2>{{ selected }}</h2>
+              <h1 class="headtitleBlogs">{{ selected }}</h1>
               <ul>
                 <li>
                   <NuxtLink to="/">صفحه اصلی</NuxtLink>
@@ -29,3 +29,10 @@ export default {
   props: ["selected"]
 };
 </script>
+<style >
+.headtitleBlogs{
+  font-size: 50px;
+    color: #fdb139 !important;
+    margin-bottom: 10px;
+}
+</style>

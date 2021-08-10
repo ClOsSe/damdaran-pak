@@ -67,17 +67,16 @@
           </button>
         </form>
       </div>
-      <div class="tags widget-item">
+      <!-- <div class="tags widget-item">
         <h3>برچسب ها</h3>
         <ul>
           <li v-for="(item, index) in selected" :key="index">
-            <!-- <NuxtLink to="/">{{ item.slug }}</NuxtLink> -->
-            <a>{{ item.slug }}</a>
+            <a>{{ item.slug }} </a>
           </li>
         </ul>
-      </div>
+      </div> -->
       <div class="call widget-item">
-        <h3>تماس بگیرید</h3>
+        <h3>برای خرید دام زنده تماس بگیرید</h3>
         <a :href="'tel:' + $store.state.AllSetting.data.cell">{{
           $store.state.AllSetting.data.cell
         }}</a>

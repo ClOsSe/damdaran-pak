@@ -14,12 +14,12 @@
     <section class="blog-area ptb-100">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6 col-lg-4">
-            <BlogPost
-              v-for="(item, index) in AllArticles"
-              :key="index"
-              :selected="item"
-            />
+          <div
+            class="col-sm-6 col-lg-3"
+            v-for="(item, index) in AllArticles"
+            :key="index"
+          >
+            <BlogPost :selected="item" />
           </div>
         </div>
         <div class="pagination-area">

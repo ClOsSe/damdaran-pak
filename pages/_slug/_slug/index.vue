@@ -7,7 +7,7 @@
     <!-- End Preloader -->
 
     <!-- Page Title -->
-    <PageTitleArea :selected="$route.params.slug" />
+    <PageTitleArea :selected="Details.title" />
     <!-- End Page Title -->
 
     <!-- Blog Details -->
@@ -35,7 +35,7 @@
                     <a v-else>نظرات (0)</a>
                   </li>
                 </ul>
-                <h2>{{ Details.title }}</h2>
+
                 <p style="overflow:hidden;" v-html="Details.content"></p>
               </div>
               <!-- comment cart -->
@@ -90,7 +90,7 @@ export default {
     let Details = await blogsAPI
       .getSpecificArticle(encodeURIComponent(context.route.params.slug))
       .then(Articel => {
-        console.log(Articel.data.data.article);
+        // console.log(Articel.data.data.article);
         return Articel.data.data.article;
       });
 
@@ -101,6 +101,7 @@ export default {
         let res;
         if (AllComments.data != "") {
           res = AllComments.data.data.data;
+          // console.log(res);
           return res;
         } else {
           return 0;
